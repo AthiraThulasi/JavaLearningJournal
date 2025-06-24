@@ -61,7 +61,7 @@ So, maximum value a nibble can store is **15** (decimal) = **1111** (binary).
 ### ✅ Takeaway:
 
 - Primitive = store **actual value**
-- Non-Primitive = store **memory reference** to object in heap
+- Non-Primitive = store **memory reference** 
 
 ---
 
@@ -84,7 +84,6 @@ So, maximum value a nibble can store is **15** (decimal) = **1111** (binary).
 
 ## 🎯 Interview Questions
 
-### ✅ Basic
 - What is a data type in Java?  
 - Types of data types in Java?  
 - Difference between primitive and non-primitive?  
