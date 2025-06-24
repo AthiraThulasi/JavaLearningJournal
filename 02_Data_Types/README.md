@@ -87,17 +87,11 @@ So, maximum value a nibble can store is **15** (decimal) = **1111** (binary).
 - What is a data type in Java?  
 - Types of data types in Java?  
 - Difference between primitive and non-primitive?  
-- Default values of int, boolean, and char?  
-- Why can’t primitives hold null?  
+- Default values of int, boolean, and char?   
 - Size in bytes of each primitive type?  
-- Range of byte, short, int, long?  
-- Can you use int in ArrayList?    
-- What if null is assigned to a primitive?  
-- What happens when you compare Integer with null?  
+- Range of byte, short, int, long?    
 
 
 ---
-
-
 
 📬 _You can open an issue or fork the repo to suggest edits — I truly appreciate your input!_
