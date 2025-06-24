@@ -37,13 +37,13 @@ Our Code (.java)
 
 Bytecode (.class)
       Run using JVM
-      
+
 Output on screen
 
 # Detailed Explanation
 
 # Our Code (.java)
-This is the human-readable source code you write, saved with a .java extension (e.g., MyProgram.java). It contains instructions, logic, and syntax following the Java language rules.
+This is the human-readable source code weßß write, saved with a .java extension (e.g., MyProgram.java). It contains instructions, logic, and syntax following the Java language rules.
 
 # Compile using javac (Java Compiler)
 The javac command (part of the Java Development Kit - JDK) takes our .java source files.
