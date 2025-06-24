@@ -164,6 +164,8 @@ Integer numObj = 10;        // Wrapper class
 ✅  Integer is an object (wrapper class) and can store null > Storing null means it doesn't point to any actual object.
 
 ❌ int is a primitive data type and cannot be assigned null — it must have a real number like 0, 1, -5, etc.
+
+
 ---
 
 ## 🔹 Why Do We Need Wrapper Classes?
