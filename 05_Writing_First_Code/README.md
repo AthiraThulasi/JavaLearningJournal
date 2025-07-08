@@ -40,6 +40,7 @@ Package names should be written in **lowercase** by convention.
 A basic Java class looks like this:
 
 public class Example {
+
     public static void main(String[] args) {
 
         // Code block starts
@@ -75,12 +76,27 @@ public class HelloWorld {
 | `args`                | Runtime arguments passed during execution  |
 
 
-## Can We Create a private Class?
+## Can We Create a `private` Class?
+
+In Java:
+
+- A **top-level class** is a class declared directly in a `.java` file (outside of any other class).
+- A **nested class** is a class defined **inside another class**.
+
+---
 
 | Class Type                  | Allowed? | Explanation                                                               |
 |-----------------------------|----------|---------------------------------------------------------------------------|
 | **Top-level private class** | ❌ No     | Java requires the main class to be accessible — `public` or default only. |
-| **Nested private class**    | ✅ Yes    | Private inner classes are allowed for encapsulation within another class. |
+| **Nested private class**    | ✅ Yes    | A private class *inside* another class is allowed, used for hiding logic. |
+
+---
+
+**Simple Tip to Remember:**
+
+> A **nested class** is like a helper class that lives *inside* another class.  
+> A **top-level class** is the outer class — and it **cannot** be `private` because Java needs to access it to run our code.
+
 
 
 ##  How many Public Classes allowed per java file?
