@@ -45,7 +45,7 @@ public class Example {
 
         // Code block starts
 
-        // Write your logic here
+        //  logic here
 
         // Code block ends
     }
@@ -125,7 +125,7 @@ public class MyClass {
 
    - Allowing multiple public classes would create confusion about which one to load.
 
-## What You Cannot Do - Adding multiple public class!
+## What We Cannot Do - Adding multiple public class in a single .java file!
 
 // File name: MyFile.java
 
@@ -152,7 +152,7 @@ Class name must match the filename when using public.
 
 ## Interview Question
 
-**Q: Why does Java allow only one public class per `.java` file? What happens if you try to define two public classes in the same file?**
+**Q: Why does Java allow only one public class per `.java` file? What happens if we try to define two public classes in the same file?**
 
 
 Java enforces a one-to-one relationship between the public class and the file name for clarity, maintainability, and proper class loading by the JVM.
