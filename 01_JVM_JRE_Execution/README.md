@@ -23,3 +23,7 @@
 | JVM  | -        | Runs bytecode |
 | JRE  | JVM + libraries | Run Java apps |
 | JDK  | JRE + tools | Develop & run Java apps |
+
+
+
+
