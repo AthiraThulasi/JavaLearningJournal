@@ -97,9 +97,9 @@ for (int i = 1; i <= 5; i++) {
 
 Normally, a loop ends when its condition becomes false.
 
-But sometimes, you may want to exit early — for example, if a certain value is found or a condition is met.
+But sometimes, we may want to exit early — for example, if a certain value is found or a condition is met.
 
-In such cases, break gives you manual control to terminate the loop before its natural end.
+In such cases, break gives a manual control to terminate the loop before its natural end.
 
 ```java
 int i = 1;

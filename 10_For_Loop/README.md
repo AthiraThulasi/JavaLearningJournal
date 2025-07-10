@@ -120,11 +120,8 @@ for (int i = 5; i >= 1; i--) {
 
 
 ```java
-for (int i = 1; ; i++) {
-    System.out.println(i);
-    if (i == 5)
-        break; // Stop after printing 5
-}
+for (int i = 1; ; i++) 
+
 ```
 
 If we don’t use break, this loop will run forever!
@@ -151,20 +148,17 @@ i = 5, j = 1
 
 ## Enhanced For Loop (For-Each)
 
-"Used when we just want to read elements of an array/collections one by one, without using an index."
+**Used when we just want to read elements of an array/collections one by one, without using an index.**
 
 ```java
-int[] numbers = {1, 2, 3, 4, 5};
+int[] numbers = {1, 2, 3, 4, 5}; // numbers is an array which holds 5 integer values: 1, 2, 3, 4, 5.
 
-for (int num : numbers) {
+for (int num : numbers) {. // During each iteration, "num" holds one value from the array starting from index 0 to the last index, and prints it.
     System.out.println(num);
 }
 ```
 
-✅ Here, num takes each element from the array numbers.
-
-✅ Best for read-only iteration when we don’t need to change the elements.
-
+**num** is a loop variable or Element variable — it temporarily holds each element of the array **numbers** during every iteration.
 
 
 ## When to Use For Loop?
