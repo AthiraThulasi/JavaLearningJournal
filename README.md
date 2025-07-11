@@ -3,12 +3,12 @@
 Welcome to my Java Learning Journal!  
 This is a structured, topic-wise guide where I document what I learn in Java — with explanations, sample code, and hands-on practice.
 
-Why This Journal?
+## Why This Journal?
 
 I believe the best way to master something is to teach it — even if it’s just to your future self.  
 This journal reflects my journey, doubts, solutions, and growth.
 
-How I got Motivated?
+## How I got Motivated?
 
 Every time I study something new, I make detailed notes to understand it deeply.
 One day, someone from my java study group asked me to share those notes — and that simple moment sparked an idea:
@@ -16,7 +16,7 @@ Why not turn my notes into a structured, public journal?
 
 That’s how this Java Learning Journal was born — not just for others, but also for my future self, to revisit concepts and track my progress.
 
-About The Content?
+## About The Content?
 
 I owe a big part of this journal to my mentor, whose brilliant content, passionate teaching, and dedication to clarity have deeply inspired me.🫶
 Every concept I’ve noted here — from the basics to the tricky parts — comes alive because of the way he explains it with such purpose and precision.
