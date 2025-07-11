@@ -3,7 +3,7 @@
 
 ##  What is a Method?
 
- ***A method is a code block designed to perform a specific task. It is like an instruction that tells the program to do something specific, like an action.**
+ **A method is a code block designed to perform a specific task. It is like an instruction that tells the program to do something specific, like an action.**
 
 ## Think of it like giving a command to do something:
 
@@ -47,7 +47,7 @@ returnType methodName(argument1, argument2) { // Method Signature // arguments a
 
 ##  What is a Return Type ? 
 
-**The return type tells us what the method will give back after execution. It is specified before the method name during definition.**
+**The return type tells us what the method will give back after execution (the type). It is specified before the method name during definition.**
 
 Let's learn from examples!
 
@@ -55,7 +55,7 @@ Let's learn from examples!
 
 ```java
 
-public int addNumbers(int a, int b) {. // Adding two numbers returns a number as result. So int is the return type of this method.
+public int addNumbers(int a, int b) { // Adding two numbers returns a number as result. So int is the return type of this method.
 
     return a + b; // returns sum of two numbers (int)
 }
@@ -72,14 +72,14 @@ public String greet(String name) {
     return "Hello, " + name + "!"; // returns name which is of type String
 }
 ```
-This method returns name which is of type String.
+**This method returns name which is of type String.**
 
 
 ## 3. Method with void Return Type
 
 ```java
 
-public void printWelcome() {
+public void printWelcome() {.    // void is a reserved keyword in java
 
     System.out.println("Welcome to Java Learning Journal!"); //This method returns a String greeting message based on the input.
 }
