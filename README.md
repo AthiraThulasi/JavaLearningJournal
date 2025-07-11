@@ -16,7 +16,7 @@ Why not turn my notes into a structured, public journal?
 
 That’s how this Java Learning Journal was born — not just for others, but also for my future self, to revisit concepts and track my progress.
 
-## About The Content?
+## About The Content - A Note of Gratitude
 
 I owe a big part of this journal to my mentor, whose brilliant content, passionate teaching & dedication to clarity have deeply inspired me 🫶
 Every concept I’ve noted here — from the basics to the tricky parts — comes alive because of the way he explains it with such purpose and precision.
