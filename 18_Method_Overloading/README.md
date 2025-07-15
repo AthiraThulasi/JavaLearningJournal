@@ -4,7 +4,7 @@
 
 ## How Java Decides Which Method to Call in method overloading?
 
-Java looks at:
+**Java looks at:**
 
 **(1) The number of parameters**
 
@@ -66,7 +66,9 @@ main() starts
 │     └── Executes Line 14 → Output: Sum (int + int): 30
 │     └── Method excecution finishes - Values popped out of Stack - Control returns to the caller (main method)
 │
- At Line 8, local variables `a` and `b` are passed by value into `x` and `y`
+ At Line 8, local variables `a` and `b` are passed by value into `x` and `y`.
+
+  Local variables from main() are copied into method arguments - Java's pass-by-value behavior.
 ```
 
 
@@ -90,6 +92,8 @@ main() continues
 │
  At Line 9, `a`, `b`, and `c` are passed by value into `x`, `y`, and `z`
 
+ Local variables from main() are copied into method arguments - Java's pass-by-value behavior.
+
 ```
 
 ### Method Call on Line 10: addNumbers(d, b) → Control goes to Line 21 as it matches the method on Line 21
@@ -110,7 +114,9 @@ main() continues
 │     └── Executes Line 22 → Output: Sum (double + int): 25.5
 │     └── Method excecution finishes - Values popped out of Stack - Control returns to the caller (main method)
 │
- At Line 10, `d` and `b` are passed by value into `x` and `y`
+ At Line 10, `d` and `b` are passed by value into `x` and `y`.
+
+  Local variables from main() are copied into method arguments - Java's pass-by-value behavior.
 
 ```
 ## Key Points:
