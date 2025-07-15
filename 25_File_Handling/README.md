@@ -1,6 +1,6 @@
 # File Handling in Java
 
-### File handling means to **read from**, **write to**, **create**, **delete**, and **manipulate** contents of files programatically.
+### File handling means to **read from**, **write to**, **create**, **delete** and **manipulate** contents of files programatically.
 
 ---
 
@@ -190,7 +190,7 @@ try {
 ```
  **Always assume file operations may fail — prepare our program to recover smoothly.**
 
- # Methods to Check File Properties
+ ### Methods to Check File Properties
 
 
 ```java
