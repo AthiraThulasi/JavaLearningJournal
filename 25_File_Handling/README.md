@@ -190,7 +190,7 @@ try {
 ```
  **Always assume file operations may fail — prepare our program to recover smoothly.**
 
- ### Methods to Check File Properties
+ ## Methods to Check File Properties
 
 
 ```java
