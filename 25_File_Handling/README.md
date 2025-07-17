@@ -26,7 +26,11 @@
 
 ##  File Class in Java
 
-**`File` is a class in `java.io` package used to create, delete, and check file properties (like name, path, etc.).**
+**`File` is a class in `java.io` package.**
+
+**The File class in Java acts as a reference to a file or directory path on the system.**
+
+**It helps us to interact with external files or directories — such as checking if they exist, creating new ones, deleting them, or retrieving their properties (like name, path, size).**
 
 ## How to create an object of file class ?
 
