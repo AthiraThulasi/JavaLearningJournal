@@ -37,7 +37,16 @@
 ```java
 File file = new File("path/to/file.txt");
 ```
-This doesn't create the file immediately — it just creates an object representing the file path.
+### IMP NOTE
+
+**Path of the file should be SYSTEM INDEPENDENT.**
+
+For windows - path separator is a BACKWARD slash & For Mac, Linux & Unix - path separator is FORWARD slash.
+
+**In Java, always prefer forward slash (/) — Java handles it internally.**
+
+**Always use Relative path (file name) over Absolute path( starts from root).**
+
 
 ---
 

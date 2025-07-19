@@ -1,49 +1,171 @@
 # String
 
-A String is a sequence of characters, like "java".
+### A String is a sequence of characters.  Eg: "java". ( String should be enclosed in doube quotes)
 
-String is a non-primitive data type and a class from the java.lang package.
+### String is a class from the java.lang package. It is non-primitive data type .
+
+## How to declare a String?
+
+### (1) Using String Literal
 
 
-# Why is String a Non-Primitive?
+``` java
+S in caps  non -primitive variable 
+↑           ↑
+String    name  =  "Every Second Counts";
+   ↑        ↑              └───────► String Literal                    Literal is a fixed value assigned to a variable.
+   │        │                
+        
+   │        └───────► reference var // Store hashcode (unique Identification) to access the String Literal
+   ↓                       
+non-primitive Datatype   
+                  
+```
 
-Unlike primitive types (int, char, etc.), String is a class.
+## Where is this String Literal stored in Memory?
 
-Even when declared like a primitive (String name = "Athira";), it internally creates a String object.
+**String literal is stored in a special memory called String Intern pool.**
 
-We can use methods on it (e.g., .length(), .toUpperCase()) — which primitive types don’t support.
+**String Internpool lets us store only unique value (No duplicates) - Efficient memory usage.**
 
-Memory Allocation: String Literal vs Object
-✅ String Literal
-java
-Copy
-Edit
-String name = "Athira";
-Stored in the String Constant Pool (SCP) or String Intern Pool.
+## How Java Stores String Literals in the Intern Pool ?
 
-If the same literal already exists, Java reuses the reference → memory efficient.
+```java
 
-✅ String Object using new
-java
-Copy
-Edit
-String name = new String("Athira");
-A new object is created in Heap memory, even if the same literal exists in the pool.
+1.   public static void main(String[] args()){
+
+2.   String Name1 = "Alexa";
+3.   String Name2 = "Alexa";   // Sring Literal is stored in String Intern Pool
+
+}
+```
+
+## Excecution Flow
+
+```java
+Stack Memory:                              String Intern Pool:
++----------+                               +---------+
+| main()   | TOP                           |   777   | <- (Memory Address)
+|          |                       |---->  | "Alexa" |
+|  777     | name1 (Reference) ----|       +---------+
+|----------|                                    ^
+|  777     | name2 (Reference) -----------------|
++----------+
+```
+```java
+Program Execution Starts from main() >> The main method is loaded into the stack memory (Top of the Stack).
+
+>> Line 2: String Name1 = "Alexa";
+
+Java checks if "Alexa" is already present in the String Intern Pool - NO, it is not present >> so "Alexa" is added to the String Intern Pool.
+
+A reference is created for Name1 in the stack (777), pointing to the memory address of "Alexa" (777) in the String Intern Pool.
+
+>> Line 3: String Name2 = "Alexa";
+
+Java checks if "Alexa" is already present in the String Intern Pool. >> YES, it is already there.
+
+Java assigns the same reference (memory address - 777) to Name2, pointing to the same memory location as Name1, as String Intern Pool do not allow duplicates.
+```
+
+# String is an Immutable Class - What Does That Mean? How String Immutability Works?
+
+String is an immutable class, which means that once a String object is created, its value cannot be changed. 
+
+Any modification of a String results in the creation of a new String object, leaving the original one unchanged.
+
+```java
+
+1.   public static void main(String[] args()){
+
+2.   String Name1 = "Alexa";
+3.   String Name2 = "Alexa";   // Sring Literal is stored in String Intern Pool
+4.   String Name1 = Name1 + Name2; // Concatenation operation - adding 2 strings.
+}
+```
+## Excecution Flow
+
+
+```java
+
+Stack Memory:                                String Intern Pool:
++----------+                                   +---------+
+| main()   | TOP                            |     888       | <- (Memory Address)
+|          |                       |---->   | "Alexa Alexa" | name1 = name1 + name2 
+|  888     | name1 (Reference) ----|           +---------+
+|----------|
+|  777     | name2 (Reference) --------------------| 
+|----------|                                       |
+                                                   |
+                                                +---------+
+                                                | "Alexa " | 777   String Intern Pool
+                                                +---------+
+
+```
+
+```java
+
+Line 2: String Name1 = "Alexa";
+
+The string "Alexa" is stored in the String Intern Pool. The reference Name1 now points to the memory address of "Alexa" in the intern pool.
+
+Line 3: String Name2 = "Alexa";
+
+Since "Alexa" is already in the String Intern Pool, Name2 points to the same memory address as Name1.[ shown in image 1]
+
+Line 4: Name1 = Name1 + Name2; //Alexa Alexa
+
+This line performs String concatenation, adding Name1 ("Alexa") and Name2 ("Alexa") - The result is "Alexa Alexa".
+
+Java checks if "Alexa Alexa" already exists in the String Intern Pool. Since it doesn't, Java adds "Alexa Alexa" to the pool.
+
+Important: Now, Name1 points to a new memory reference (where "Alexa Alexa" is stored). The previous reference pointing to "Alexa" is removed.
+
+The reference Name1 is updated to point to the new string "Alexa Alexa", and a new memory address is assigned to it.
+
+```
+
+Why is String Non-Primitive?
+
+Unlike primitive types (int, char, etc.), String is a class. So we can create object from a class.
+
+Even when declared like a primitive (String name = "Athira";). It internally creates a String object.
+
+We can use methods on String (e.g., .length(), .toUpperCase()) — which primitive types don’t support.
+
+### Memory Allocation: String Literal vs Object
+
+ ### String Literal
+
+```java
+
+String name = "Athira"; // String Literal
+Stored in the String Intern Pool.
+```
+
+> If the same literal already exists, Java reuses the reference → memory efficient.
+
+### String Object using new
+
+```java
+
+String name = new String("Athira");  //String Object
+```
+> A new object is created in Heap memory, even if the same literal exists in the pool.
 
 Not memory efficient.
 
 🧠 Purpose of String Pool
 To save memory by reusing immutable string literals.
 
-🧵 Text-Based Memory Diagram
-markdown
-Copy
-Edit
+```
+String name = new String("Athira")
+
 Heap Memory
 -------------
-| "Athira" |    ← Created via: new String("Athira")
+| "Athira" |    
 -------------
-
+```
 String Constant Pool
 ----------------------
 | "Athira" |    ← Created via: String name = "Athira";
@@ -53,8 +175,9 @@ Stack Memory
 -----------------------------
 | name ─────────┐
 |               ▼
-|     Ref to SCP/Heap
+|     Ref to String Intern Pool/Heap
 -----------------------------
+
 💡 Important Points
 String is immutable (cannot be changed once created).
 
