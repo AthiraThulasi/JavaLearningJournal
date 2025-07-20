@@ -143,13 +143,10 @@ No shifting. No resizing. Just a simple reference change.
 > **That’s why LinkedList is preferred when frequent updates are needed in the middle of the structure.**
 
 
-
-
-```
-
 ### Types Of LinkedLists
-
 ```
+
+
                         LinkedList
                              │
      ┌──────────────────────┼──────────────────────┐
