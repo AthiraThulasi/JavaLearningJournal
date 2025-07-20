@@ -1,12 +1,14 @@
 # String
 
-### A String is a sequence of characters.  Eg: "java". ( String should be enclosed in doube quotes)
+### A String is a sequence of characters.  Eg: "java". ( String should be enclosed in double quotes)
 
-### String is a class from the java.lang package. It is non-primitive data type .
+### String is a class from the java.lang package. It is a non-primitive data type .
 
 ## How to declare a String?
 
-### (1) Using String Literal
+### 2 ways to declare a String - (1) Using String Literal and (2) Using new Keyword (String Object)
+
+## (1) Using String Literal
 
 
 ``` java
@@ -16,10 +18,45 @@ String    name  =  "Every Second Counts";
    ↑        ↑              └───────► String Literal                    Literal is a fixed value assigned to a variable.
    │        │                
         
-   │        └───────► reference var // Store hashcode (unique Identification) to access the String Literal
+   │        └───────► reference var   // Stores memory address (reference) — acts as unique identification to locate the object
    ↓                       
 non-primitive Datatype   
                   
+```
+
+## (2) Using new Keyword (String Object)
+
+
+We can create a String Object using the **`new`** keyword. [ new keyword creates object in Heap Memory]
+
+```java
+
+1. String s1 = new String("Java");
+2. String s2 = new String("Java");
+
+```
+```
+Stack Memory                      Heap Memory                         
+┌────────────┐               ┌────────────────────┐                
+│   s1       │──────────────►│  "Java" (object)   │                
+└────────────┘               └────────────────────┘               
+┌────────────┐               ┌────────────────────┐
+│   s2       │──────────────►│  "Java"(object)     │
+└────────────┘               └────────────────────┘
+
+reference variables
+```
+### What happens in here?
+
+```java
+
+new String("Java") creates a new object in the Heap.
+
+One object is created in the heap for s1.
+
+Another separate object is created in the heap for s2.
+
+Each call to new creates a separate object in heap memory - meaning s1 and s2 point to different memory addresses, even though their content is the same.
 ```
 
 ## Where is this String Literal stored in Memory?
@@ -66,9 +103,12 @@ A reference is created for Name1 in the stack (777), pointing to the memory addr
 Java checks if "Alexa" is already present in the String Intern Pool. >> YES, it is already there.
 
 Java assigns the same reference (memory address - 777) to Name2, pointing to the same memory location as Name1, as String Intern Pool do not allow duplicates.
+
 ```
 
-# String is an Immutable Class - What Does That Mean? How String Immutability Works?
+
+
+## String is an Immutable Class - What Does That Mean? How String Immutability Works?
 
 String is an immutable class, which means that once a String object is created, its value cannot be changed. 
 
@@ -119,12 +159,84 @@ This line performs String concatenation, adding Name1 ("Alexa") and Name2 ("Alex
 
 Java checks if "Alexa Alexa" already exists in the String Intern Pool. Since it doesn't, Java adds "Alexa Alexa" to the pool.
 
-Important: Now, Name1 points to a new memory reference (where "Alexa Alexa" is stored). The previous reference pointing to "Alexa" is removed.
-
-The reference Name1 is updated to point to the new string "Alexa Alexa", and a new memory address is assigned to it.
+>> Important: Now, Name1 points to a new memory reference 888 (where "Alexa Alexa" is stored) and the previous reference (777) pointing to "Alexa" is removed.
 
 ```
 
+## How Does Java Compare Objects?
+
+### Java compares objects in two ways:
+
+### (1) Using the reference comparison operator  ==
+
+### (2) Using the .equals() method
+
+
+## How Reference Comparison Operator ( == )  Compare Primitives ?
+
+>**For primitive types (like int, char, boolean, etc.), == compares the actual values stored in the variables, not memory addresses.**
+
+```java 
+
+
+int a = 10; // a is primitive type
+
+int b = 10; // b is primitive type
+
+System.out.println(a == b); // == compares values for primitives // true because both values are same. [ 10 == 10]
+
+For Primitive types (like int, char, boolean)
+
+Reference Comparison Operator ( == )compares actual values stored in the variable.
+
+```
+
+## How Reference Comparison Operator ( == ) Compares Non - Primitives ?
+
+>**For non-primitive types, == compares the memory address (i.e., whether two reference variables point to the same object in memory)**
+
+``` java
+
+String s1 = new String("Java"); //  s1 -  reference variable
+
+String s2 = new String("Java"); // s2 - reference variable
+
+System.out.println(s1 == s2); //  false → different memory addresses
+
+s1 and s2 are reference variables in the stack, each pointing to separate objects (i.e., different memory addresses) in the heap, both containing the same content: "Java".
+
+```
+```java
+
+String s3 = "Java"; // s3 is stored in the String Intern Pool
+
+String s4 = "Java"; // s4 points to the same object as s3, since the content is identical
+
+System.out.println(s3 == s4); // true → both refer to the same object in the String pool
+
+```
+## .equals() method
+
+>**Used to compare contents of objects**
+
+```java
+
+String s1 = new String("Java");
+
+String s2 = new String("Java");
+
+String s3 = new String("JAVA");
+
+System.out.println(s1.equals(s2));  // true  → same content (case matches)
+
+System.out.println(s2.equals(s3));  // false → content is not the same (case difference - the uppercase and lowercase letters do not match.)
+
+```
+>**The .equals() method is case-sensitive.** 
+
+
+```
+System.out.println(s1.equals(s2)); // ✅ true → compares actual text inside // case sensitive
 Why is String Non-Primitive?
 
 Unlike primitive types (int, char, etc.), String is a class. So we can create object from a class.
