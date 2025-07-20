@@ -1,7 +1,7 @@
 # Linked List
 
 ##  What is a LinkedList?
-
+---
 
 **A LinkedList is a linear data structure where elements are stored in the form of nodes**.  
 
@@ -19,6 +19,7 @@ Each node contains:
 ```
 
 ## What is a Node?
+---
 
 ``` java 
 
@@ -29,6 +30,7 @@ Nodes are connected one after another using the references — like a chain scat
 ```
 
 ## What Does a LinkedList Look Like Internally?
+---
 ```
 
        Node →
@@ -51,6 +53,7 @@ Nodes are connected one after another using the references — like a chain scat
  ```
 
 ## Why Is the Last Node’s Reference null?
+---
 
 **In a LinkedList, each node has a reference (pointer) to the next node.**
 
@@ -61,6 +64,7 @@ Nodes are connected one after another using the references — like a chain scat
 
 
 ## Why Use LinkedList When We Already Have Array and ArrayList?
+---
 
 ### Let’s understand it like a story:
 
@@ -75,7 +79,9 @@ So when we do frequent insertions or deletions (especially in the middle), it be
 
 ```
 
- ### So, What’s the Solution >> LinkedList.
+ ### So, What’s the Solution ?  LinkedList !
+ ---
+
 
 ```java
 
@@ -84,6 +90,7 @@ So when we do frequent insertions or deletions (especially in the middle), it be
  ```
 
  ### Why LinkedList Works Better for Certain Scenarios ?
+ ---
 
  ```
 
@@ -97,6 +104,7 @@ So when we do frequent insertions or deletions (especially in the middle), it be
 ```
 
 ### What is Time Complexity ? 
+---
 
 ```
 Time Complexity is a way to measure how efficient a data structure is, based on how the performance changes when you give it more data to handle.
@@ -104,6 +112,7 @@ Time Complexity is a way to measure how efficient a data structure is, based on 
 ```
 
 ### What is the Time Complexity of linkedList and Why?
+---
 
 ```
 Time Complexity of LinkedList is O(1) - Constant Time, when we have a direct reference to the node or its predecessor.
@@ -114,8 +123,10 @@ Time Complexity of LinkedList is O(N) - Linear Time, when accessing an element b
 
 ```
 ### Why O(1)? 
+---
 
 >> **In a LinkedList** 
+---
 
 ```
 - nodes are NOT stored in continuous memory.
@@ -134,6 +145,7 @@ No shifting. No resizing. Just a simple reference change.
 ```
 ---
 >> **In an ArrayList**
+---
 ```
 - If we want to insert or delete an element from the middle:
 - we have to shift all the other elements to fill the gap or make space — which takes O(n) time.
@@ -144,6 +156,7 @@ No shifting. No resizing. Just a simple reference change.
 
 
 ### Types Of LinkedLists
+---
 ```
 
 
@@ -155,6 +168,7 @@ Singly LinkedList   Doubly LinkedList   Circular LinkedList
 
 ```
 ## Singly LinkedList
+---
 
 **The reference in each node allows traversal in only one direction (Single direction)  — from the first node (head) to the last node - forward movement.**
 
@@ -179,6 +193,7 @@ Singly LinkedList   Doubly LinkedList   Circular LinkedList
 
 
 ## Doubly Linked List
+---
 
 **In a Doubly Linked List, each node contains references to both the previous and the next node.**
 
@@ -217,6 +232,7 @@ This is the head → No previous node, so Prev = null
 ```
 
 ### Node 1
+---
 
 **777 is the memory address of the first node.**
 
@@ -225,6 +241,7 @@ This is the head → No previous node, so Prev = null
 **666 is the pointer to the next node.**
 
 ### Node 2
+---
 
 **777 is the address of the previous node (Node 1). It allows backward movement.**
 
@@ -233,6 +250,7 @@ This is the head → No previous node, so Prev = null
 **null in the next field  as there is no node after this → so this is the last node (tail).**
 
 ## Circular LinkedList
+---
 
 **In a circular linked list, each node stores: Data  +  reference (pointer) to the next node.**
 
@@ -273,6 +291,7 @@ This is the head → No previous node, so Prev = null
 
 ```
 ###  Key Notes
+---
 
 - **ArrayList** provides fast access and update, but is slower for deletions due to shifting.
 
