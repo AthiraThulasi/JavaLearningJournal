@@ -196,7 +196,7 @@ Singly LinkedList   Doubly LinkedList   Circular LinkedList
 
 Bi-directional traversing makes traversal more efficient compared to a singly linked list.
 
- ## NOTE :**Java's LinkedList class uses Doubly Linked List structure internally.**
+ ### NOTE :**Java's LinkedList class uses Doubly Linked List structure internally.**
 
 ```
  
@@ -265,14 +265,15 @@ This is the head → No previous node, so Prev = null
 ```
 
 | Operation      | ArrayList                                                | LinkedList                                      
-|----------------|------------------------------------------------       |-------------------------------------------------|
+|----------------|------------------------------------------------       |----------------------------------------------------------------|
 | add()          | ✅ **Faster** – added at the end in continuous memory | ❌ **Slower** – Java must find and link scattered memory nodes |
-| get()          | ✅ **Faster** – direct index access                   | ❌ **Slower** – must traverse from head         |
-| update()       | ✅ **Faster** – update by index                       | ❌ **Very slow** – must locate node before updating |
-| delete()       | ❌ **Slower** – shifting needed after removal         | ✅ **Super fast** – just unlink 1 or 2 nodes     |
+| get()          | ✅ **Faster** – direct index access                   | ❌ **Slower** – must traverse from head                        |
+| update()       | ✅ **Faster** – update by index                       | ❌ **Very slow** – must locate node before updating            |
+| delete()       | ❌ **Slower** – shifting needed after removal         | ✅ **Super fast** – just unlink 1 or 2 nodes                   |
 
 ```
 ###  Key Notes
+
 - **ArrayList** provides fast access and update, but is slower for deletions due to shifting.
 
 - **LinkedList** excels in insertion and deletion, especially when done at the head or tail.
