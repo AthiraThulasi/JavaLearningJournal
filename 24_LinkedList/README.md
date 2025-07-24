@@ -296,3 +296,9 @@ This is the head → No previous node, so Prev = null
 - **ArrayList** provides fast access and update, but is slower for deletions due to shifting.
 
 - **LinkedList** excels in insertion and deletion, especially when done at the head or tail.
+
+
+### Frequently Asked in Interviews
+---
+
+ **How to reverse a LinkedList ?**
