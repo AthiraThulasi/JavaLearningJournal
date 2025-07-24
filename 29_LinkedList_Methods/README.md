@@ -202,6 +202,8 @@ This gives us access to only the methods defined in the List interface,as Java l
 ```
 ## How Elements Look in Memory (Doubly Linked List)
 
+Not sure how a Doubly Linked List works?  [Click here to understand how it works]
+
 ```
        Address: 001
 ┌────────┬──────────┬────────┐
