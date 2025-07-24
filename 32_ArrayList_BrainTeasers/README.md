@@ -1,5 +1,5 @@
 
-## Concept Review: How Much Do You Remember?
+## ArrayList - Concept Review: How Much Do You Remember?
 
 ```
 
@@ -17,8 +17,8 @@ Q2. How does an ArrayList grow when the capacity is full?
 
 
  Q4. Where is an ArrayList stored in memory? 
-→ The reference (e.g., `al`) is stored in the **stack**  
-→ The actual data is stored in the **heap**
+→ The reference (e.g., `al`) is stored in the stack  
+→ The actual data is stored in the heap
 
 
 Q5. What happens when an ArrayList is full and a new element is added?  
@@ -77,7 +77,7 @@ Q11. How to remove all elements from an ArrayList?
 
 
 Q18. How to make a read-only ArrayList? 
-→ `Collections.unmodifiableList(list)`
+→ Collections.unmodifiableList(list)
 
 
  Q19. Is ArrayList fail-fast or fail-safe?
