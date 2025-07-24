@@ -132,22 +132,23 @@ List<String> namesList = new LinkedList<>();       // polymorphism or upcasting
          Parent              Child's Object
         (Reference Type)      
 
-
+```
 1. List is the parent interface, and LinkedList is the child class that implements it.
 
 2. Because of polymorphism (upcasting), we can easily switch between different List implementations like ArrayList, Vector, LinkedList, etc., without rewriting our code.
-
-   ```java
-
-    > List<String> namesList = new LinkedList<>();
-    > List<String> namesList = new ArrayList<>();
 
 3. This approach is great for flexibility.
 
 4. Our code becomes more reusable and follows good design principles.
 
+```java
+
+    > List<String> namesList = new LinkedList<>();
+    > List<String> namesList = new ArrayList<>();
+
 ```
-## Limitations of Using List as the Reference Type ?
+
+## Limitations of Using List as the Reference Type When Accessing Both List & Deque Methods ?
 
 **When we want to use methods that belong specifically to the LinkedList class and the Deque interface, if we use List as parent type**
 
@@ -173,34 +174,33 @@ This gives us access to only the methods defined in the List interface,as Java l
 
 ## Adding Elements to LinkedList
 
->LinkedList is implemented as a Doubly Linked List, meaning each node holds references to both its previous and next nodes, allowing traversal in both forward and backward directions.
+> LinkedList is implemented as a Doubly Linked List, meaning each node holds references to both its previous and next nodes, allowing traversal in both forward and backward directions.
 
 > LinkedList maintains order of insertion.
 
-> Duplicates allowed
-
-> Null is allowed in LinkedList
+> LinkedList supports duplicates and allows null values.
 
 ```java
 
-       LinkedList<String> namesList = new LinkedList<String>();
+    LinkedList<String> namesList = new LinkedList<String>();
 
-        namesList.add("python");
+    namesList.add("python");
 
-        namesList.add("java");
+    namesList.add("java");
 
-        namesList.add("postman");
+    namesList.add("postman");
 
-        namesList.add("java");// Duplicates allowed
+    namesList.add("java");// Duplicates allowed
 
-        namesList.add(null);// Null is allowed in LinkedList
+    namesList.add(null);// Null is allowed in LinkedList
 
-        ArrayList<String> al = new ArrayList<>()
+    ArrayList<String> al = new ArrayList<>()
 
-        al.add("JMeter");// ArrayList and LinkedList are using the SAME add() method from the List interface.
-        al.add("cypress");
+    al.add("JMeter");// ArrayList and LinkedList are using the SAME add() method from the List interface.
+
+    al.add("cypress");
 ```
-## How It Looks in memory!
+## How Elements Look in Memory (Doubly Linked List)
 
 ```
        Address: 001
@@ -235,7 +235,7 @@ Address: 004
 
 
 
-## Inserting Elements to particular index in LinkedList
+## Inserting Elements to a particular index in LinkedList
 
 **> Insertion in a LinkedList is fast because elements are inserted by simply updating the links (pointers) between nodes, without shifting other elements as in an ArrayList.**
 
@@ -431,6 +431,8 @@ for(String names : namesList){
 
 ## Loop Using Iterator
 
+Wanna revise Iterator >> 
+
 ``` java
 
 Iterator<String> iteratorList = namesList.iterator();  
@@ -472,6 +474,8 @@ namesList.forEach(System.out::println); // :: > Method reference — shorthand f
 
 ```java
 
+// Creating a LinkedList and using add() to add elements
+
 LinkedList<String> namesList = new LinkedList<String>();
 
             namesList.add("java");
@@ -479,8 +483,8 @@ LinkedList<String> namesList = new LinkedList<String>();
             namesList.add("selenium");
             namesList.add("java");
             namesList.add("postman");
-            namesList.add(0,"cypress");
-            namesList.add(null);     // o/p - [cypress, java, python, selenium, java, postman, null]
+            namesList.add(0,"cypress");         // Inserts "cypress" at index 0, shifting others to the right
+            namesList.add(null);               // o/p - [ cypress, java, python, selenium, java, postman, null]
        
 ```
 
