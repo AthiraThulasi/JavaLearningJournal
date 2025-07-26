@@ -1,6 +1,7 @@
 # JavaLearningJournal  - A structured and easy-to-navigate Java learning guide
 
-Welcome to my Java Learning Journal!  
+## Welcome to my Java Learning Journal!
+
 This is a structured, topic-wise guide where I document what I learn in Java — with explanations, sample code, and hands-on practice.
 
 ## Why This Journal?
