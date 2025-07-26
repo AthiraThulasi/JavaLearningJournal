@@ -23,21 +23,17 @@
 
 ## Why Do We Need ArrayList When We Already Have Arrays?
 
-Arrays are one of the oldest and simplest data structures in Java.
+> Arrays are one of the oldest and simplest data structures in Java.
 
-They help us store data in a contiguous memory block with index-based access — fast and efficient!
+> They help us store data in a contiguous memory block with index-based access — fast and efficient!
 
-But they come with a major limitation:
+> But they come with a major limitation: Once the size of an array is defined, it cannot be changed.
 
-Once the size of an array is defined, it cannot be changed.
-
-Imagine We're building a contact list or a shopping cart — and we don’t know how many items will be added. Arrays will fall short here. This is where ArrayList comes in.
+> Imagine We're building a contact list or a shopping cart — and we don’t know how many items will be added. Arrays will fall short here. This is where ArrayList comes in.
  
 ## ArrayList – A Resizable Array!
 
-ArrayList is a class in Java from the java.util package. 
-
-It offers a dynamic way to store and manage data.
+ArrayList  offers a dynamic way to store and manage data.
 
 We don't have to worry about size — it can grow as needed.
 
@@ -131,24 +127,27 @@ newCapacity = 10 + (10 / 2) = 15
 
 ```
  
-## What Is the Time Complexity of ArrayList?
+## Why Is ArrayList Fast?  What is the Time Complexity ?
+```
 
 Time complexity describes how the performance of an operation scales with the size of the input.
 
-When we perform CRUD operations (Create, Read, Update, Delete), understanding time complexity helps us compare data structures like ArrayList vs. LinkedList.
+ArrayList works like a normal array — all elements are stored next to each other in memory.
 
-Accessing by index → Time Complexity: O(1) → Constant Time
- 
-## Why Is ArrayList Fast?
+So when we say get(3), Java knows exactly where the 3rd element is.
 
-	> ArrayList offers fast random access, meaning it can access elements directly by index.
+It jumps directly to that spot — no searching, no looping.
 
-	> It does not require sequential traversal, so even with a large list, accessing any element is very fast. 
+This direct access makes retrieval very fast, even for large lists — and this happens in CONSTANT TIME, i.e., O(1).
 
-	> Time Complexity: O(1) → Constant Time.
+Time Complexity of ArrayList is O(1).
+
+```
 
 
-##  How to Make an ArrayList Thread-Safe (Synchronized)?
+## How to Make an ArrayList Thread-Safe (Synchronized)?
+
+### 2 ways  - (1) By Using Collections.synchronizedList() &  (2) Using CopyOnWriteArrayList 
 
 ### (1) By Using Collections.synchronizedList()
 
@@ -158,8 +157,10 @@ By using collections utility method synchronizedList and pass the arraylist
 
 List<String> syncList = Collections.synchronizedList(new ArrayList<>();
 
+// This ensures thread-safe access.
+
 ```
-This ensures thread-safe access, but manual synchronization is still needed when iterating.
+
  
 ### 2. Using CopyOnWriteArrayList (Expensive Solution)
 
@@ -173,28 +174,7 @@ This is a thread-safe variant of ArrayList. It creates a fresh copy of the array
 Expensive Solution – as it creates new copy everytime.
 
 
-✅  Interview Questions on Internal Working of ArrayList
-What is the default capacity of an ArrayList in Java?
-→ 10
-How does an ArrayList grow when the capacity is full?
-→ It increases by 50% of its current capacity (new capacity = old + old/2).
-What is the difference between size() and capacity in an ArrayList?
-→ size() = number of elements added. 
-capacity = number of elements the internal array can hold.
-Can an ArrayList hold primitive types like int?
-→ No. It can only hold objects. For int, we must use the wrapper class Integer.
-Where is an ArrayList stored in memory?
-→ The reference (al) is stored in the stack. The actual objects (data) are stored in the heap.
-What happens when an ArrayList is full and a new element is added?
-→ A new larger internal array is created, old elements are copied, and the new element is added.
-Is ArrayList thread-safe?
-→ No. It's not synchronized. Use Collections.synchronizedList() or CopyOnWriteArrayList for thread safety.
-How does ArrayList differ from an array in memory management?
-→ Arrays have fixed size and can't grow. ArrayList grows dynamically and internally manages memory.
-Can we manually set the capacity of an ArrayList?
-→ Yes, using new ArrayList<>(initialCapacity).
-How is resizing handled in ArrayList? Is it costly?
-→ Yes, resizing can be costly. It involves creating a new array and copying elements, which takes time.
+
 
 
 

@@ -302,3 +302,36 @@ This is the head → No previous node, so Prev = null
 ---
 
  **How to reverse a LinkedList ?**
+
+ **Why do we use linkedlist for manipulation and not ArrayList?**
+ ```
+
+When it comes to frequent **insertions and deletions**, especially in the **middle or beginning**, `LinkedList` outperforms `ArrayList` due to its internal structure.
+
+## ✅ Key Reason:
+
+- **LinkedList** uses **nodes with pointers** — allowing quick changes without shifting elements.
+- **ArrayList** uses a **contiguous array** — making insertion/deletion expensive because elements need to be moved.
+
+---
+
+## 📊 Performance Comparison
+
+| Operation                                                  | LinkedList                                                              | ArrayList                                        |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------ |
+| **Insertion/Deletion** (especially in the middle or start) | ✅ **Efficient** → Just re-link pointers → `O(1)` (if position is known) | ❌ **Slow** → Needs shifting of elements → `O(n)` |
+| **Memory Layout**                                          | Elements are not stored in contiguous memory blocks                     | Elements are stored in contiguous memory blocks  |
+| **Overhead**                                               | Slightly more memory (extra pointers)                                   | Less memory overhead                             |
+
+---
+
+## 💡 Example
+
+```java
+// Insert at the beginning
+linkedList.addFirst("new"); // ✅ Very fast — no shifting needed
+arrayList.add(0, "new");    // ❌ Slow — shifts all elements right
+
+```
+                     |
+
