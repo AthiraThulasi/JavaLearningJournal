@@ -22,7 +22,7 @@ I owe a big part of this journal to my mentor, whose brilliant content, passiona
 Every concept I’ve noted here — from the basics to the tricky parts — comes alive because of the way he explains it with such purpose and precision.
 His energy constantly reminds me to keep learning, keep building, and keep shining — and I hope this journal reflects that same spirit. ✨✨✨
 
-Thank you  [Jatin Sharma](https://www.youtube.com/@tech_with_jatin)! 🤍
+Thank you  [Jatin Sharma](https://www.youtube.com/@tech_with_jatin)! ✨✨✨
 
 I’ve also explored the topics on my own — did my own digging, tried out examples, wrote code snippets, and even created visual diagrams — all to understand the why behind every concept better.
 Along the way, I’ve connected the dots to real-time doubts, interview questions, and added Git-friendly formatting to make the learning smoother.
