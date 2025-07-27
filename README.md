@@ -13,7 +13,7 @@ This journal reflects my journey, doubts, solutions, and growth.
 
 Every time I study something new, I make detailed notes to understand it deeply.
 One day, someone from my java study group asked me to share those notes — and that simple moment sparked an idea:
-Why not turn my notes into a structured, public journal?
+Why not turn my notes into a structured journal?
 
 That’s how this Java Learning Journal was born — not just for others, but also for my future self, to revisit concepts and track my progress.
 
