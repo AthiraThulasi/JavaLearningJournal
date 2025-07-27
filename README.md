@@ -26,7 +26,7 @@ His energy constantly reminds me to keep learning, keep building, and keep shini
 
 Thank you  [Jatin Sharma](https://www.youtube.com/@tech_with_jatin)! ✨✨✨
 
-I’ve also explored the topics on my own — did my own digging, tried out examples, wrote code snippets, and even created visual diagrams — all to understand the why behind every concept better.
+I’ve also explored the topics on my own — did my own digging, tried out examples, wrote code snippets, and created visual diagrams — all to understand the why behind every concept better.
 Along the way, I’ve connected the dots to real-time doubts, interview questions, and added Git-friendly formatting to make the learning smoother.
 
 📂 Table of Contents
