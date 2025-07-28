@@ -18,6 +18,8 @@
                                       SortedSet & NavigableSet (interfaces)
 
 ```
+
+```
 Non Linear Data Structure which store only unique values.
 
 Only unique values are stored - No duplicates allowed.
@@ -41,11 +43,11 @@ Can retrieve elements in sorted order if Treeset is used.
 No get() Method in Set. In Set, elements are not stored by index, so we cannot use get(index) like we do with a List.
 
 Set use Iterator or for-each loop to traverse the elements one by one.
-
+```
 
 
 ## Hashset
-
+```
 Hashset is a class which implements Set Interface.
 
 Hashset internally uses hashmap, so insertion order is not preserved. Elements appear in random order when iterated.
@@ -55,7 +57,7 @@ Single null value is allowed in hashset.
 HashSet extends AbstractSet.
 
 AbstractSet implements Set.
-
+```
 
 How to declare a Hashset?
 
@@ -106,11 +108,13 @@ TreeSet<String> treeSet = new TreeSet<>();
 ```
 
 ## How to retrieve elements from Set?
+```
 
-The Set interface does **not** provide a `get()` method — because Sets are **not index-based**.
+The Set interface does **not** provide a `get()` method — because Sets are **not index-based.
 
-To access elements, we use **Iterator** (from the Iterator interface) or **enhanced for-each loops**.
+To access elements, we use Iterator (from the Iterator interface) or **enhanced for-each loops.
 
+```
 ## For each for Iteration
 
 ```java
@@ -152,14 +156,14 @@ System.out.println(...)
 ➤ Prints the current element.
 
 
-Iterator<String>	You are declaring a variable dataIterator of type Iterator Interface — used to loop through String values.
+Iterator<String>	We are declaring a variable dataIterator of type Iterator Interface — used to loop through String values.
 treeSet.iterator()	This calls the iterator() method on treeSet, which returns an Iterator object.
 
 Iterator is an interface from java.util.
 
 iterator() is a method inside the Iterable interface.
 
-All collections like List, Set, etc., implement Iterable, so you can use .iterator() on them.
+All collections like List, Set, etc., implement Iterable, so we can use .iterator() on them.
 
 
 🔸 LinkedHashSet → ✅ Maintains insertion order
@@ -218,12 +222,4 @@ HashSet<String> hashset = new HashSet<String>();
         System.out.println(al.get(0));
         ```
 
-        Brain Teasers
-
-        Diff between hash set and linked hashset?
-
-        order mainte
-
-        Set where elements are sorted(ascending order)
-
-        treeset
+        
