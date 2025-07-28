@@ -41,7 +41,7 @@ Stack Memory                      Heap Memory
 │   s1       │──────────────►│  "Java" (object)   │                
 └────────────┘               └────────────────────┘               
 ┌────────────┐               ┌────────────────────┐
-│   s2       │──────────────►│  "Java"(object)     │
+│   s2       │──────────────►│  "Java"(object)    │
 └────────────┘               └────────────────────┘
 
 reference variables
@@ -61,9 +61,9 @@ Each call to new creates a separate object in heap memory - meaning s1 and s2 po
 
 ## Where is this String Literal stored in Memory?
 
-**String literal is stored in a special memory called String Intern pool.**
+**String literal is stored in a special memory called STRING INTERN POOL.**
 
-**String Internpool lets us store only unique value (No duplicates) - Efficient memory usage.**
+**STRING INTERN POOL lets us store only unique value (No duplicates) - Efficient memory usage.**
 
 ## How Java Stores String Literals in the Intern Pool ?
 
@@ -106,13 +106,16 @@ Java assigns the same reference (memory address - 777) to Name2, pointing to the
 
 ```
 
-
+## What is the purpose of String Intern Pool ?
+```
+To save memory by reusing immutable string literals.
+```
 
 ## String is an Immutable Class - What Does That Mean? How String Immutability Works?
 
-String is an immutable class, which means that once a String object is created, its value cannot be changed. 
+**String is an immutable class, which means that once a String object is created, its value cannot be changed.** 
 
-Any modification of a String results in the creation of a new String object, leaving the original one unchanged.
+**Any modification of a String results in the creation of a new String object, leaving the original one unchanged.**
 
 ```java
 
@@ -219,6 +222,8 @@ System.out.println(s3 == s4); // true → both refer to the same object in the S
 
 >**Used to compare contents of objects**
 
+>**The .equals() method is case-sensitive.** 
+
 ```java
 
 String s1 = new String("Java");
@@ -232,205 +237,185 @@ System.out.println(s1.equals(s2));  // true  → same content (case matches)
 System.out.println(s2.equals(s3));  // false → content is not the same (case difference - the uppercase and lowercase letters do not match.)
 
 ```
->**The .equals() method is case-sensitive.** 
 
+## What is hashCode() ?
 
 ```
-System.out.println(s1.equals(s2)); // ✅ true → compares actual text inside // case sensitive
-Why is String Non-Primitive?
+Every object in Java has a hashCode() method (inherited from Object class, which is the parent of all classes in java).
+
+It returns an integer value that represents the object’s hash .
+
+>  For Strings: The String class OVERRIDES hashCode() to return a VALUE based on its CONTENT, NOT MEMORY LOCATION
+
+```
+```java
+
+String s1 = "Athira";
+
+String s2 = new String("Athira");
+
+System.out.println(s1.equals(s2));    //  true → same content
+
+System.out.println(s1.hashCode());    // e.g., 63365123
+
+System.out.println(s2.hashCode());    // same as s1 → 63365123
+
+Even though s1 and s2 are different objects in memory, their hashCodes match because their CONTENTS ARE EQUAL.
+
+```
+## Why is String Non-Primitive?
+
+```
 
 Unlike primitive types (int, char, etc.), String is a class. So we can create object from a class.
 
-Even when declared like a primitive (String name = "Athira";). It internally creates a String object.
+Even when declared like a primitive (String name = "java";). It internally creates a String object.
 
 We can use methods on String (e.g., .length(), .toUpperCase()) — which primitive types don’t support.
 
-### Memory Allocation: String Literal vs Object
+```
 
- ### String Literal
+## Memory Allocation: String Literal vs String Object
+
+### String Literal
 
 ```java
 
 String name = "Athira"; // String Literal
+
 Stored in the String Intern Pool.
-```
 
 > If the same literal already exists, Java reuses the reference → memory efficient.
+```
+
 
 ### String Object using new
 
 ```java
 
-String name = new String("Athira");  //String Object
-```
-> A new object is created in Heap memory, even if the same literal exists in the pool.
+String name = new String("Athira");  //String Object 
 
-Not memory efficient.
-
-🧠 Purpose of String Pool
-To save memory by reusing immutable string literals.
+A new object is created in Heap memory, even if the same literal exists in the pool > Not memory efficient.
 
 ```
-String name = new String("Athira")
+## How It Looks Internally In Memory?
 
+```
 Heap Memory
 -------------
-| "Athira" |    
+| "Athira" |   ← created by new
 -------------
-```
-String Constant Pool
+
+String Intern Pool
 ----------------------
-| "Athira" |    ← Created via: String name = "Athira";
+| "Athira" |  ← already created if not present
 ----------------------
 
 Stack Memory
 -----------------------------
 | name ─────────┐
 |               ▼
-|     Ref to String Intern Pool/Heap
+|     Reference to Heap
 -----------------------------
 
-💡 Important Points
-String is immutable (cannot be changed once created).
+```
 
-It stores references (not actual content) in the stack.
+## Why do we prefer String Literals over String Objects?
+```
+String Literals - We prefer String literals because they are stored in the String Pool,which helps Java reuse existing strings instead of creating new objects.
 
-Java reuses existing literals via the String pool.
+This improves memory efficiency and performance.
 
-❓ Interview Tip
-Q: What’s the difference between String name = "Athira"; and String name = new String("Athira");?
+String Object - Using new String() creates unnecessary objects in Heap memory,so it is generally avoided unless we explicitly need a new instance.
 
-A:
+```
 
-The first reuses the literal from the pool (SCP).
 
-The second creates a new object in heap memory, even if the same string exists.
+## String Summary (Quick Revision)
+```
 
-String is an Immutable Class in Java
-Java String objects are immutable, meaning their value cannot be changed once created.
+(1) String is immutable → Once created, it cannot be changed.
 
-🛡️ Why are Strings Immutable?
-✅ Security (used in classloaders, URLs, file paths)
+(2) String literals are stored in the String Intern Pool.
 
-✅ Performance (due to String Pool reuse)
+(3) Using new String("abc") creates a new object in Heap memory.
 
-✅ Thread Safety (no accidental changes in multi-threaded programs)
+(4) .equals() compares content.
 
-✅ Hashcode Caching (for fast access in HashMap)
+(5) == behaves differently:
 
-🔄 Example: String Immutability + Pool Reuse
-java
-Copy
-Edit
-class Demo {
+        > For primitives: compares actual values
+        10 == 10 → true
+
+        > For objects: compares memory/reference
+        "abc" == new String("abc") → false
+
+(6) .hashCode() returns an int based on content (overridden in String class)
+
+(7) .hashCode() checks the content
+
+(8) Different memory → == returns false
+
+(9) Strings are thread-safe by nature due to immutability
+
+
+```
+
+## Brain Teasers !
+
+```java
+
+public class StringCheck {
     public static void main(String[] args) {
-        int x = 10;
-        int[] a = new int[3];
-        a[0] = 10;
-        a[1] = 20;
-        a[2] = 30;
+        String a = "Be Consistent";
+        String b = new String("Be Consistent");
 
-        String name1 = "Jatin";
-        String name2 = "Jatin"; // ✅ Same value, reused from pool
-        String name3 = name1 + "123"; // 🔄 Creates new String
+        System.out.println(a == b);          // ?
+        System.out.println(a.equals(b));     // ?
+        System.out.println(a.hashCode());    // ?
+        System.out.println(b.hashCode());    // ?
     }
 }
-name1 and name2 point to the same object in the String Constant Pool
-
-name3 is created fresh in heap because of concatenation (+)
-
-🧠 Memory Diagram
-vbnet
-Copy
-Edit
-Stack Memory                       Heap Memory                      String Constant Pool
-┌────────────┐                 ┌────────────┐                     ┌──────────────┐
-| name1 ─────┼────────┐        |   [0] 10    |                    |  "Jatin"     |
-| name2 ─────┤        │        |   [1] 20    |                    └────┬─────────┘
-| name3 ─────┘        │        |   [2] 30    |                         │
-                      ▼        └────────────┘                         │
-                   "Jatin"  ◄─────────────────────────────────────────┘
-                      ↑
-           (Shared between name1 & name2)
-           
-          name3 → "Jatin123" (New Object in Heap)
-✅ String Pool (Intern Pool)
-Java maintains a pool of strings to save memory.
-
-If the same literal is reused, Java assigns the same reference.
-
-🔍 Even if two variables use the same value, only one copy is created in the pool.
-
-💥 Strings are Immutable
-❌ Can't modify after creation.
-
-Operations like concatenation, replace, etc., return new objects.
-
-🔁 Mutable Alternatives
-Class	Mutable	Thread-Safe
-String	❌	✅
-StringBuilder	✅	❌
-StringBuffer	✅	✅
-
-🔍 String Comparison
-Use .equals() to compare content.
-
-Use == to compare references.
-
-java
-Copy
-Edit
-String a = "hello";
-String b = new String("hello");
-
-System.out.println(a == b);        // false → different objects
-System.out.println(a.equals(b));   // true  → same content
 
 
-== vs .equals() in Java
-Operator	Compares	Used With
-==	References / memory address (for objects)
-Value (for primitives)	Objects & Primitives
-.equals()	Actual content/value	Objects only (like String)
+Questions:
 
-📌 Example: Comparing Strings with ==
-java
-Copy
-Edit
-public class StringDemo {
+(Q1) a == b → Does it compare references or values?
+
+(Q2) a.equals(b) → Will it return true or false? Why?
+
+(Q3) a.hashCode() and b.hashCode() → Will they match?
+
+```
+```java
+
+public class EqualityCheck {
     public static void main(String[] args) {
-        int x = 10;
-        int y = 10;
+        int a = 10; // primitive
+        int b = 10;
 
-        System.out.println(x == y);  // ✅ True → primitive comparison → 10 == 10
+        System.out.println(a == b);  // ?
 
-        String name1 = "Athira";     // 🔁 Stored in String pool
-        String name2 = "Athira";     // 🔁 Reuses same pool reference
-        String name3 = "athira";     // 🔁 Different string, different reference
+        String s1 = "Value your time";
+        String s2 = new String("Value your time");
 
-        System.out.println(name1 == name2);  // ✅ True → same reference in pool
-        System.out.println(name1 == name3);  // ❌ False → different reference
+        System.out.println(s1 == s2);  // String object      // ?
+        System.out.println(s1.equals(s2));   // ?
     }
 }
-🧠 Explanation:
-✅ For Primitives:
-java
-Copy
-Edit
-x == y  → compares values directly → 10 == 10 → ✅ true
-❌ For Objects:
-java
-Copy
-Edit
-name1 == name2 → compares **memory address**
-→ both refer to same pool location → ✅ true
 
-name1 == name3 → different string literal → different address → ❌ false
-🔎 Case Sensitivity with .equals()
-java
-Copy
-Edit
-System.out.println(name1.equals(name3)); // ❌ false → "Athira" ≠ "athira"
-equals() is case-sensitive.
+(Q1) What will be the output of a == b? Why?
 
-Even though name1 and name3 have similar letters, Java treats "Athira" and "athira" as different values.
+(Q2) Are s1 and s2 referring to the same object in memory? Why or why not?
+
+(Q3) What does s1 == s2 compare? Content or memory reference?
+
+(Q4) Why does s1.equals(s2) return true even though s1 == s2 is false?
+
+(Q5) How many objects are created in memory when we write new String("Value your time")?
+
+(Q6) Why does == work differently for primitives and String objects?
+
+```
+
+

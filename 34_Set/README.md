@@ -43,6 +43,7 @@ No get() Method in Set. In Set, elements are not stored by index, so we cannot u
 Set use Iterator or for-each loop to traverse the elements one by one.
 
 
+
 ## Hashset
 
 Hashset is a class which implements Set Interface.
@@ -50,6 +51,10 @@ Hashset is a class which implements Set Interface.
 Hashset internally uses hashmap, so insertion order is not preserved. Elements appear in random order when iterated.
 
 Single null value is allowed in hashset.
+
+HashSet extends AbstractSet.
+
+AbstractSet implements Set.
 
 
 How to declare a Hashset?
@@ -164,6 +169,31 @@ All collections like List, Set, etc., implement Iterable, so you can use .iterat
 🔸 TreeSet → ✅ Sorted order (not insertion order)
 
 
+
+## Methods in set
+
+```java
+
+// isEmpty() - check whether a set is empty or not
+                HashSet<String> set =  new HashSet<>();
+                  set.isEmpty();
+        System.out.println(set.isEmpty());
+
+        //size() - total num of elements in set
+        System.out.println(hashset.size());
+
+        // contains() - check whether a particular obj is present or not in the set - returns boolean
+        System.out.println(hashset.contains("India"));
+        System.out.println(hashset.contains("Delhi"));
+
+
+        // remove() - remove an obj from set
+        System.out.println(hashset.remove("Kashmir"));
+        System.out.println(hashset);
+        }
+
+```
+
 ## How to access elements in set through index?
 
 Not possible as set doesn't have any index
@@ -187,3 +217,13 @@ HashSet<String> hashset = new HashSet<String>();
         System.out.println(al);
         System.out.println(al.get(0));
         ```
+
+        Brain Teasers
+
+        Diff between hash set and linked hashset?
+
+        order mainte
+
+        Set where elements are sorted(ascending order)
+
+        treeset
