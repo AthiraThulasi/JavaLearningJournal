@@ -1,5 +1,13 @@
 
-# Maps
+# Map 
+
+```
+> Map is part of the Java Collections Framework, but it DOES NOT EXTEND the COLLECTION INTERFACE.  
+
+> This is because Map stores KEY - VALUE Pairs, unlike other collections like `List` or `Set`, which store individual elements.
+
+``` 
+
 
 ## Map Hierarchy 
 ```
