@@ -219,7 +219,7 @@ we must override both equals() and hashCode().
        >>Hash-based collections work as expected
 
 ```
-##  What Happens If we Don’t Override?
+##  What Happens If We Don’t Override?
 
 ``` java
 // Even if two objects have same data:
@@ -238,9 +238,18 @@ HashMap will treat s1 and s2 as different keys,even though they "look" the same!
 
 Overriding both makes sure our object behaves correctly in collections.
 ```
-## Object.hashCode() vs Objects.hash() – What’s the Difference?
+## Object.hashCode() vs Objects.hash() – What’s The Difference?
 
-### Object.hash()
+```
+When overriding the hashCode() method in our custom class, we typically choose between two approaches:
+
+1. Use the default hashCode() method inherited from the Object class.
+
+2. Use the utility method Objects.hash() introduced in Java 7
+
+```
+
+## What is Object.hashCode() - The Default Method !
 
 ```
 Object.hashCode() – from java.lang.Object
@@ -264,7 +273,7 @@ System.out.println(obj.hashCode());  // Prints the default hashCode based on mem
 
 ```
 
-## Objects.hash
+## What is Objects.hash() – The Utility Method for Custom Classes !
 
 ```
 Objects.hash() – from java.util.Objects
@@ -285,7 +294,7 @@ public int hashCode() {
 
 ```
 
-## Objects.hash OR Object.hash() - Which one to prefer?
+## Object.hash ( ) OR Objects.hash( ) - Which one to prefer?
 
 ```
 When overriding the hashCode() method in our custom class, we have two options:
@@ -605,7 +614,8 @@ Not good!
 Collisions reduce the performance of HashMap by increasing the time to search, insert, or delete entries.
 ```
 
-##  What happens when collisions increase?
+## What Happens When Collisions Increase and How Java Handles It ?
+
 ```
 > When multiple keys hash to the same bucket, they are stored in a LINKEDLIST.
 
@@ -614,15 +624,15 @@ Collisions reduce the performance of HashMap by increasing the time to search, i
   - Tree lookup: O(log n)  
   - LinkedList lookup: O(n)
 
-- DEFAULT LOAD FACTOR: 0.75 > This means when the number of entries exceeds 75% of the current capacity, the map will **resize** (usually doubles the capacity).
+- DEFAULT LOAD FACTOR: 0.75 > This means when the number of entries exceeds 75% of the current capacity, the map will RESIZE (usually doubles the capacity).
 
-##  What happens during resizing?
+> What happens during RESIZING ?
 
       > A new, larger array is created.
 
       > All existing entries are rehashed and rearranged to new buckets.
 
-      > This is called rehashing, and it’s an expensive operation in terms of performance.
+      > This is called REHASHING, and it’s an EXPENSIVE operation in terms of performance.
 
       > Frequent resizing can lead to performance issues. That’s why choosing a good initial capacity is important for large datasets.
 ```
