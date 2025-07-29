@@ -457,9 +457,11 @@ Index (Bucket)    NODE - The actual object stored inside a bucket
 
 ```java
 
+NODE is the the actual object stored inside a bucket.
+
 Each NODE contains the following:
 
-class Node<K, V> {
+class Node <K, V> {
 
     final int hashCode; // hashCode → Numeric representation of the key (used to find the bucket index)
 
@@ -467,11 +469,9 @@ class Node<K, V> {
 
     V value;            // value → A dummy constant object called PRESENT (used to complete the key–value pair)
 
-    Node<K, V> next;    // next → A pointer to the next node in the same bucket (used during collisions)
+    Node <K, V> next;    // next → A pointer to the next node in the same bucket (used during collisions)
 }
 ```
-===============================================================================================================================================================
-
 
 ## How to Insert an Element Inside a HashMap?
 
