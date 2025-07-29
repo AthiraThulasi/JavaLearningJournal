@@ -7,14 +7,14 @@
              |      Map (interface) |                           Map (specifically HashMap) = Array (buckets) + LinkedList 
              +----------+-----------+
                         ↑
-implements+---------------------------+implements
-         |             |                      |
-No order |             |implements            |
+implements+-----------------------------------+implements
+         ^             ^                       ^
+No order |             | implements            |
  +-------------+  +-------------+  +------------------+                                Hashmap implements Map
  | HashMap     |  | TreeMap     |  | LinkedHashMap    |                                LinkedHashMap implements Map
  | (class)     |  | (class)     |  | (class)          |  java.utilpackage              TreeMap implements Map
  +-------------+  +-------------+  +------------------+
-                                Maintain Insertion order
+                                   Maintain Insertion order
 ``` 
 
   ## NOTE :
@@ -42,19 +42,19 @@ No order |             |implements            |
     | Map (Key, Value)  |
     +------------------+
 
- > Whenever we want to retrieve the VALUE, use the KEY associated with it. This is called LOOK UP OPERATION (Retrieval).
+ > Whenever we want to retrieve the value, we use the KEY that is associated with that VALUE. This is called LOOK UP OPERATION (Retrieval).
 
  > LOOK UP happens at super speed.
 
  > Perfomance of get() or the LOOK UP opearation is O(1) > Time Complexity. 
 
- > Example use: Counting frequencies, lookups (dictionary-style).
+ > Example use: Counting frequencies, lookups (dictionary).
 
 ```
 
 ## What is Timecomplexity O(1) means?
 ```
-> No matter how many key-value pairs are stored in the map, whether it's 10, 100, 1,000, or even 1 million.
+> No matter how many key-value pairs are stored in the map, whether it's 10, 100, 1000, or even 1 million.
 
 > Retrieving a value using a KEY will take the same amount of time > So TimeComplexity is Constant - O(1)
 
@@ -62,12 +62,11 @@ No order |             |implements            |
 
 ## What is Hashing ? How Hashing Works in HashMap ?
 ```
-Hashing is the process of converting a large object (like a string) into a fixed-length integer value — called hashCode.
+Hashing is the process of converting a LARGE OBJECT into a FIXED LENGTH INTEGER VALUE — called hashCode.
 
 This integer value is the  bucket index where the NODE will be stored ( KEY & VALUE)
 
-Reduces collisions  and enables fast retrieval.
-
+Reduces collisions and enables fast retrieval.
 
 bucketIndex = hashCode % capacity;
 ```
@@ -75,20 +74,22 @@ bucketIndex = hashCode % capacity;
 
 Example: Hashcode of an Integer Object
 
-Integer i = 10; // or Integer i = new Integer(10);
+Integer i = 10; 
+
+// or Integer i = new Integer(10); // // Both lines create Integer objects in different ways
 
 System.out.println(i.hashCode()); // Output: 10 // Hashcode of any integer obj is number itself.
 
 ```
 ```
 +-------------------------+
-|  Integer is a Wrapper   |                                      //   Integer is a wrapper class.                    
+|  Integer is a Wrapper   |                                      //  Integer is a wrapper class.                    
 |  class for int          |
-+-----------+-------------+                                    //  Parent of integer is Object.
++-----------+-------------+                                     //  Parent of integer is Object.
             |
-            |                                                // Object class provides a method called hashCode(), which generates hashcode using hashing to convert large objs into fixed len integer
+            |                                                  // Object class provides a method called hashCode(), which generates hashcode using hashing to convert 
      +------+------+
-     |   Object    |  ← Parent of Integer
+     |   Object    |  ← Parent of Integer                       large objs into fixed len integer
      +------+------+
             |
      +------+------+
@@ -112,7 +113,8 @@ s[i] is the ith character of the string
 
 ^ means exponentiation (power)
 
-31 is a prime number used to reduce collisions
+31 (base multiplier) is a prime number used to reduce collisions.
+
 ```
 ```
 +------------------------------+
@@ -129,19 +131,261 @@ hashCode formula:
 = 97*961  + 98*31   + 99*1
 = 96354 > fixed length integer
 
-So here large string get converted to fixed length integer
+So here LARGE STRING is converted to FIXED LENGTH INTEGER.
+
+```
+## What is the CONTRACT BETWEEN hashCode() and equals()?
+
+```
+When we create a custom class (like Student or Employee) and plan to store its objects in collections like HashMap, HashSet, or Hashtable,
+
+we MUST OVERRIDE BOTH equals() and hashCode() — this is known as the contract between them.
+
+These methods should be based on our class's instance variables, so that logically equal objects behave correctly in hash-based collections.
+
+```
+```
+Two objects are considered equal when:
+
+(1) Their hashCode() is the same.
+
+(2) Their instance variable values match.
+
 ```
 
+## Java's Contract Rule !
+
+```
+==========================================================================================================
+If two objects are equal according to .equals() → they must return the same hashCode()
+
+But if two objects have the same hashCode() → they may or may not be equal (because of hash collisions)
+
+==========================================================================================================
+```
+
+## Code showing Java's Contract Rule !
+```java
+
+
+public class Test {
+    public static void main(String[] args) {
+        String s1 = "Java";
+        String s2 = "Java";
+
+        System.out.println(s1.equals(s2));       // true → content is same
+        System.out.println(s1.hashCode());       // e.g., 2008614266
+        System.out.println(s2.hashCode());       // 2008614266
+
+
+    
+    }
+}
+```
+##  Why this proves the CONTRACT ?
+
+```
+Both s1 and s2 have the same content
+
+So .equals() returns true
+
+And their hashCode() is also the same
+
+This proves:If two objects are equal using .equals() -> they must have the same hashCode().
+
+```
+
+## Why Should We Override Both in Custom Classes?
+```
+Whenever we create a custom class (like Student, Employee, etc.) and plan to use it in hash-based collections like HashMap or HashSet,
+we must override both equals() and hashCode().
+
+.equals() → defines logical equality (based on instance variables)
+
+.hashCode() → ensures equal objects go to the same bucket
+
+   > Overriding equals() and hashCode() ensures:
+
+       >>Objects with same values are treated as equal
+
+       >>Hash-based collections work as expected
+
+```
+##  What Happens If we Don’t Override?
+
+``` java
+// Even if two objects have same data:
+
+Student s1 = new Student(1, "Athira");
+
+Student s2 = new Student(1, "Athira");
+
+// Without overriding equals() and hashCode()
+
+System.out.println(s1.equals(s2)); // false 
+
+System.out.println(s1.hashCode() == s2.hashCode()); // maybe false 
+
+HashMap will treat s1 and s2 as different keys,even though they "look" the same! 
+
+Overriding both makes sure our object behaves correctly in collections.
+```
+## Object.hashCode() vs Objects.hash() – What’s the Difference?
+
+### Object.hash()
+
+```
+Object.hashCode() – from java.lang.Object
+
+Object is the parent of all classes in Java.
+
+Default method inherited by every class in Java.
+
+Returns a hash based on the memory address (if not overridden).
+
+Can lead to more collisions unless overridden properly.
+
+Not null-safe.
+
+Usually not used directly in custom hash logic.
+```
+```java
+
+Object obj = new Object();
+System.out.println(obj.hashCode());  // Prints the default hashCode based on memory address
+
+```
+
+## Objects.hash
+
+```
+Objects.hash() – from java.util.Objects
+
+A utility method (static) introduced in Java 7
+
+Used to generate a hash code by combining multiple fields
+
+Internally calls Arrays.hashCode() → which is null-safe
+
+Great for use in custom class implementations of hashCode()
+```
+```java
+
+public int hashCode() {
+    return Objects.hash(id, name); // Combines both fields
+}
+
+```
+
+## Objects.hash OR Object.hash() - Which one to prefer?
+
+```
+When overriding the hashCode() method in our custom class, we have two options:
+
+(1) Use the default hashCode() from the Object class. 
+           
+           OR
+
+(2) Use the utility method Objects.hash() introduced in Java 7.
+
+But which one should we use?
+
+```
+```
+Always Prefer: Objects.hash() >> LESS COLLISIONS
+
+Because it:
+
+   > Combines multiple fields into one hash
+
+   > is null-safe
+
+   > Reduces hash collisions
+
+   > Makes our code cleaner and readable
+
+```
+```
+ Object.hashCode() (Default)
+
+   > Comes from java.lang.Object
+
+   > Based on memory address (if not overridden)
+
+   > Not null-safe
+
+   > Not useful for checking equality of two objects with same data
+
+   > Always choose the one with less collision
+
+```
+
+##  How to Properly Override hashCode() and equals() in a Custom Class !
 
 
 
-We say 2 objects are equal, when they have same hashcode + check the value of instance variables.
-Hashcode and Hashing are used in maps to decide where keys and values are stored!
+```java
+import java.util.Objects;
+
+class Employee { // Custom class to show equals() and hashCode()
+    int id;
+    String name;
+
+    Employee(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    // Preferred way to override hashCode()
+    // Uses Objects.hash() to combine multiple fields and reduce collision
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
+
+    // Override equals() to define logical equality
+    // Two Employee objects are equal if their id and name are the same
 
 
-Map consists of an array/table which has a size of 16, with index from 0 to 15. Each index is called BUCKET.
+   // To generate the following - Right-click inside the class > Select Generate → equals() and hashCode()
+    @Override                                   
+    public boolean equals(Object o) {
+        if (this == o) return true;  // If both references point to same object
+        if (!(o instanceof Employee)) return false; // If not same class, return false
+        Employee e = (Employee) o;
+        return this.id == e.id && this.name.equals(e.name);
+    }
+}
 
-When we create a hashmap > HashMap <Integer,String> hmap = new HashMap(), the follwing table will be created.
+-------------------------------------------------------------------------------------------------------------------
+
+public class EmployeeRunner {
+
+    public static void main(String[] args) {
+
+         //  Same data → equals() returns true
+        Employee e1 = new Employee(1, "Athira");
+        Employee e2 = new Employee(1, "Athira");
+
+          // hashCode() based on data, so both are equal
+        System.out.println(e1.hashCode());     // Same as e2
+        System.out.println(e2.hashCode());     // Same as e1
+        System.out.println(e1.equals(e2));     // true 
+    }
+}
+```
+## Internal Working Of Map !
+
+```
+> Map consists of an array/table which has a size of 16, with index from 0 to 15. 
+
+> Each index is called BUCKET.
+
+> When we create a hashmap -  HashMap <Integer,String> hmap = new HashMap(), the follwing table will be created internally!
+
+```
+## HashMap Memory Layout !
 
 ``` 
 Index (Bucket)    NODE - The actual object stored inside a bucket
@@ -181,20 +425,22 @@ Index (Bucket)    NODE - The actual object stored inside a bucket
 ```
 
 ## What’s Inside Each Bucket?
-
+```
 **Each bucket can hold one or more NODES, depending on how many elements map to the same index.**
 
 **Each node is going to be LinkedList**.
-
+```
 ```
 ----------------------------
 | Map = Array + LinkedList |
 ----------------------------
 ```
 
-**Each Node contains the following:**
+## NODE !
 
 ```java
+
+Each NODE contains the following:
 
 class Node<K, V> {
 
@@ -219,31 +465,32 @@ Syntax:
 
 hmap.put(10, "java");
 
-```
 Internally, this calls:
 
-```java
-
 public V put(K key, V value)
+
+When we call hmap.put(10, "java"), it triggers the put(K key, V value) method defined in the Map interface and implemented by the HashMap class.
+
+The HashMap then calculates the hash code for the key, finds the correct bucket, and stores the key-value pair as a Node in that location.
 
 ```
 ## Step-by-Step Internal Process:
 
-Step 1: Calculate the hash of the key
+**Step 1: Calculate the hash of the key**
 
 ```
-hash(10) = 10
-
-Step 2: Create a Node at bucket index 10
+hash(10) = 10  // In Java, Integer's hashCode() returns the number itself
 
 ```
+
+**Step 2: Create a Node at bucket index 10.**
+
 ```
 BUCKET
 +------+                 +----------+----------+----------+----------+
 |  10  | ──────────────► | hashCode |   key    |  value   |  next    |        
 +------+                 |   10     |   10     |  java    |  null    |
                          +----------+----------+----------+----------
-
 ```       
 
 ## Inserting Another Key:
@@ -254,31 +501,33 @@ hmap.put(32, "python");
 
 hash(32) = 32
 ```
-But array size is 16. So we calculate:
 
-32 % 16 = 0
-
-Bucket index = 0
 ```
+Array size is 16. So we calculate: 32 % 16 = 0 > Remainder is 0, So Bucket index = 0.
+
 BUCKET
 +------+                 +----------+----------+----------+----------+
 |  0   | ──────────────► | hashCode |   key    |  value   |  next    |        
 +------+                 |   0      |   32     | python   |  null    |
                          +----------+----------+----------+----------+
+```
+## Why Modulus (or Bitwise AND)?
 
 ```
-## Why modulus?
+We often explain HashMap index calculation using %, because it's easy to understand.
 
-```
-To keep the index within range (0 to 15), Java uses:
+Internally (in real HashMap source code): Java actually uses bitwise AND (&) instead of % to keep the index within range (0 to 15)
 
-hash & (n - 1) // instead of hash % size
-
-Where n = array length (e.g., 16)
+hash & (n - 1) Where n = array length (e.g., 16) // instead of hash % size
 
 32 & (16 - 1) = 32 & 15 = 0
+
+Why Java Uses & Instead of %?  Because & is much faster than %
+
+HashMap always maintains its array size as a power of 2 (16, 32, etc.), so hash % size and hash & (size - 1) will always give the same result.
+
 ```
-## Collision Example:
+## Collision Example
 
 ```java
 
@@ -288,30 +537,31 @@ hash(64) = 64
 
 64 % 16 = 0
 
-Bucket index = 0 again, but index 0 already has key 32.
+Bucket index = 0, but index 0 already has key 32.
 
 Both 32 and 64 are stored in the same bucket as a linked list chain >>  Collision Occurs!
 
 ```
 
 ## What is a Collision?
-
-A collision happens when two different keys map to the same bucket index after hashing.
+```
+A collision happens when two different KEYS map to the same bucket index after hashing.
 
 In this case: Keys: 32 and 64
 
 Same bucket: 0
+```
 
+## What happens when collision occurs?
 
-# What happens when collision occurs?
-
+```
 Collision will results in creating a linkedlist .
 
-When multiple keys generate the same bucket index (after applying hash function), Java handles this by creating a **LinkedList** at that index.
+When multiple keys generate the same bucket index (after applying hash function), Java handles this by creating a LINKEDLIST at that index.
 
-Each new (key, value) pair is added as a **node** in the LinkedList.
+Each new (key, value) pair is added as a NODE in the LinkedList.
 
-
+```
 ```
 BUCKET
 +------+                 +----------+----------+----------+----------+
@@ -326,8 +576,9 @@ BUCKET
 
 ```   
 
-## How to retrieve value from Linkedlist
+## How to retrieve value from Linkedlist ?
 
+```
 hmap.get(64) // get the value of key 64
 
 hash(64)= 64
@@ -335,10 +586,10 @@ hash(64)= 64
 64% 16 = 0
 
 java goes to bucket 0, and check whether key 64 is present and return the value " restAssured".
+```
 
 
-
-## Is too many collissions good or bad?
+## Is too many collisions good or bad?
 
 ```
 Not good!
@@ -347,15 +598,15 @@ Collisions reduce the performance of HashMap by increasing the time to search, i
 ```
 
 ##  What happens when collisions increase?
+```
+> When multiple keys hash to the same bucket, they are stored in a LINKEDLIST.
 
-> When multiple keys hash to the same bucket, they are stored in a **LinkedList**.
-
-> If the number of nodes in a bucket exceeds **8**, Java (since version 8) converts the list into a **Red-Black Tree** to improve performance.
+> If the number of nodes in a bucket exceeds  8, Java (since version 8) converts the list into a **Red-Black Tree** to improve performance.
 
   - Tree lookup: O(log n)  
   - LinkedList lookup: O(n)
 
-- **Default load factor**: 0.75 > This means when the number of entries exceeds **75% of the current capacity**, the map will **resize** (usually doubles the capacity).
+- DEFAULT LOAD FACTOR: 0.75 > This means when the number of entries exceeds 75% of the current capacity, the map will **resize** (usually doubles the capacity).
 
 ##  What happens during resizing?
 
@@ -366,13 +617,13 @@ Collisions reduce the performance of HashMap by increasing the time to search, i
       > This is called rehashing, and it’s an expensive operation in terms of performance.
 
       > Frequent resizing can lead to performance issues. That’s why choosing a good initial capacity is important for large datasets.
+```
 
-
-## How many NULL KEYS hashmap can have?
+## How many null KEYS hashmap can have?
 ```
 Only one 
 ```
-## How many NULL VALUES hashmap can have?
+## How many null VALUES hashmap can have?
 ```
 Multiple
 ```
@@ -390,34 +641,6 @@ It inherits all behavior from HashMap but also maintains insertion order
 We can use a LinkedHashMap object wherever a HashMap is expected — because of  inheritance and polymorphism.
 
 ```
- ## What is the Contract Between hashCode() and equals()?
-
- ```
- In Java, the hashCode() and equals() methods are tightly linked when using objects as keys in collections like HashMap, HashSet, and Hashtable.
-
- Contract Rule:
-If two objects are equal (according to .equals()),
-→ they must have the same hashCode.
-
-But if two objects have the same hashCode,
-→ they may or may not be equal (due to collisions).
-```
-
-## Why Override Both in Custom Classes?
-```
-Whenever you create a custom class that will be used as a key in HashMap, you must override both:
-
-.equals() → to define when two objects are logically equal
-
-.hashCode() → to ensure they go to the same bucket in the map
-
-If you don't override them:
-
-Two objects with same instance variable values will be treated as different keys
-
-HashMap will treat them as different entries, even if they "look" the same
-```
-
 ## Map Implementations Comparison
 
 ```
@@ -436,24 +659,28 @@ HashMap will treat them as different entries, even if they "look" the same
 
  ```
 > HashMap is not thread-safe and non-synchronized.
-
-> It should not be used in multithreaded environments without external synchronization (e.g., Collections.synchronizedMap() or ConcurrentHashMap).
+    >It should not be used in multithreaded environments without external synchronization (e.g., Collections.synchronizedMap() or ConcurrentHashMap).
 
 > Hashtable is thread-safe and synchronized.
+   > Every method is synchronized, which makes it safe for concurrent access — but slower in performance.
 
-> Every method is synchronized, which makes it safe for concurrent access — but slower in performance.
+> HashMap allows one null key and multiple null values.
 
-> HashMap allows null key and values; Hashtable doesn’t
+> Hashtable does not allow any null key or null values.
 
 ```
 
 ## What if two keys have the same hashCode()?
 ```
 
- HashMap uses .equals() to check for equality
+If two keys have the same hashCode(), HashMap uses .equals() to further check if they are logically equal:
 
-> If different: added to the same bucket (collision handled by chaining)
+ If .equals() returns false →
+   > Both keys are stored in the same bucket (collision is handled using a linked list or tree)
 
-> If equal: value is replaced
+ If .equals() returns true →
+   > The existing value is replaced with the new one (duplicate key)
+
+
 
 ```
