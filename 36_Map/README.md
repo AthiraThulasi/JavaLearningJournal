@@ -699,6 +699,94 @@ If two keys have the same hashCode(), HashMap uses .equals() to further check if
  If .equals() returns true →
    > The existing value is replaced with the new one (duplicate key)
 
+```
 
+## Commonly Used Methods in Java Map 
+
+```java
+
+public static void main(String[] args) {
+
+        // Create a HashMap with Integer as key and String as value
+        Map<Integer, String> employeeMap = new HashMap<>();
+
+        // put(key, value) → Adds entries to the map
+        employeeMap.put(101, "A");
+        employeeMap.put(102, "R");
+        employeeMap.put(103, "S");
+
+        // Adding a duplicate key replaces the old value
+        employeeMap.put(102, "C"); // replaces "R"
+
+        // Print entire map
+        System.out.println("Employee Map: " + employeeMap); 
+        // Output: {101=A, 102=C, 103=S}
+
+        // get(key) → Retrieves the value associated with the key
+        System.out.println("Get key 101: " + employeeMap.get(101)); // A
+        System.out.println("Get key 999: " + employeeMap.get(999)); // null (key doesn't exist)
+
+        // ---------------------------------------
+        //  Internal hashing and bucket indexing
+        // ---------------------------------------
+
+        // Hash code calculation of keys (used internally to find bucket index)
+        // hashCode() returns a number used by Java to decide where to store the entry
+         System.out.println("Hash of key 101: " + Integer.valueOf(101).hashCode()); 
+
+        // To find the bucket index → Java does: hash % arraySize (usually 16 initially)
+        System.out.println("101 % 16 (bucket index): " + (101 % 16));
+        System.out.println("102 % 16 (bucket index): " + (102 % 16));
+        System.out.println("103 % 16 (bucket index): " + (103 % 16));
+
+        // So keys 101, 102, and 103 are stored at different buckets based on the result
+
+        // keySet() → returns all keys in the map
+        Set<Integer> keySet = employeeMap.keySet();
+        System.out.println("All keys in employeeMap: " + keySet);
+
+        // entrySet() → for traversing all key-value pairs
+        System.out.println("Traversing employeeMap:");
+        for (Map.Entry<Integer, String> entry : employeeMap.entrySet()) {
+            System.out.println(entry.getKey() + " -----> " + entry.getValue());
+        }
+
+        // ---------------------------------------
+        //  Case Sensitivity in Map keys
+        // ---------------------------------------
+
+        Map<String, String> studentMap = new HashMap<>();
+        studentMap.put("John", "Present");
+
+        // Case mismatch: returns null
+        System.out.println("studentMap.get("john"): " + studentMap.get("john")); // null
+
+        // Correct key (case matched): returns value
+        System.out.println("studentMap.get("John"): " + studentMap.get("John")); // Present 
+
+        //  Map keys are case-sensitive!
+        // "John" and "john" are considered two different keys
+    }
+}
+```
+
+## Summary
 
 ```
+| Method            | Purpose                                  |
+| ----------------- | -----------------------------------------|
+| put(key, value)   | Adds or replaces a key-value pair        |
+| get(key)          | Retrieves the value for a given key      |
+| keySet()          | Returns a Set of all keys                |
+| entrySet()        | Returns a Set of all key-value entries   |
+
+```
+
+
+
+
+
+
+
+
+
