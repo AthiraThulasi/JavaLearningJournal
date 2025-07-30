@@ -13,7 +13,7 @@
 
 - Maintains insertion order.
 
-- Not synchronized (not thread-safe).
+- Not synchronized (not thread-safe), but fast for single-threaded applications.
 
 - Faster than Vector in single-threaded environments.
 
