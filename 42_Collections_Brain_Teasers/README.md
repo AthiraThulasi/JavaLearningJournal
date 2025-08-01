@@ -334,5 +334,44 @@ Every class that implements Iterable (like List, Set) must override iterator().
  Stream.iterate() - exists in Java 8 - used to generate a stream of elements.
 
 ```
+### Q.34 Q18: What are the key methods in the Iterator interface?
+```
+| Method      | Purpose                                                           |
+| ----------- | ----------------------------------------------------------------- |
+| hasNext()   |  Checks if more elements are available to iterate                 |
+| next()      |  Returns the next element in the collection                       |
+| remove()    |  Removes the current element from the collection (safe removal)   |
+```
 
+### Q35. What are the methods of the Iterable interface?
+```
+| Method              | Since  | Purpose                                      |
+| ------------------- | ------ | -------------------------------------------- |
+| iterator()          | Java 5 | Returns an `Iterator` to traverse elements   |
+| forEach             | Java 8 | Performs action for each element (lambda)    |
+| spliterator()       | Java 8 | Returns a `Spliterator` for advanced looping |
+```
+
+### Q36. What is the relationship between Iterable and Iterator interfaces?
+
+```
+| Interface  | Package     | Role / Level                                  | Purpose                                                |
+| ---------- | ----------- | --------------------------------------------- | ------------------------------------------------------ |
+| Iterable   | java.lang   | Root interface of Collection Framework        | Represents a collection that can be iterated           |
+| Iterator   | java.util   | Helper interface                              | Provides methods to iterate over elements one by one |
+
+
+For better understanding: 
+
+| Interface  | Role                                                                                |
+| ---------- | ----------------------------------------------------------------------------------- |
+| Iterable   | Just says: “Hey, I SUPPORT iteration — call my iterator() method!”                |
+| Iterator   | The actual object that PERFORMS the iteration (has hasNext(), next(), etc.)     |
+
+
+Iterable enables iteration
+Iterator does the iteration
+
+
+```
 
