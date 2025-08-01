@@ -82,7 +82,7 @@ Implementations: HashMap, LinkedHashMap, TreeMap, Hashtable
 
 ## Why Use Generics in Collections?
 
-Ensures type safety - only allows elements of the specified type.
+Generics ensures type safety - only allows elements of the specified type.
 
 ```java
 
@@ -118,8 +118,11 @@ Collections store OBJECTS, not primitive types(int,double).
 Collections use wrapper classes (Integer, Double, Character, etc.)  because collections work with objects and they require reference types.
 
 Java provides wrapper classes for each primitive type, like:
+
 •	Integer for int
+
 •	Character for char
+
 •	Double for double
 ```
 ```java

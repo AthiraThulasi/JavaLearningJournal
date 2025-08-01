@@ -334,7 +334,7 @@ Every class that implements Iterable (like List, Set) must override iterator().
  Stream.iterate() - exists in Java 8 - used to generate a stream of elements.
 
 ```
-### Q.34 Q18: What are the key methods in the Iterator interface?
+### Q.34. What are the key methods in the Iterator interface?
 ```
 | Method      | Purpose                                                           |
 | ----------- | ----------------------------------------------------------------- |
