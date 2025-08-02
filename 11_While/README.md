@@ -1,4 +1,4 @@
-# 📘 While 
+#  While 
 
 
 ### The while loop is used to execute a block of code repeatedly as long as the condition is true.
