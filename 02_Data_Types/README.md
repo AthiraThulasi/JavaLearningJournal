@@ -83,8 +83,6 @@ These include:
 - Strings
 - Enums
 
-KWY POINT:
-
 ```
 
 ##  Takeaways
