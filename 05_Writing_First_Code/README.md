@@ -1,24 +1,27 @@
-# 📘 Writing the First Code
+#  Writing the First Code
 
-## Where Do Java Files Go?
+## Where Do Java Files Go - Java Source File Location :
 
-## Java Source File Location
+```
+- All Java source files are typically stored inside a src (source) folder.
 
-- All Java source files are typically stored inside a **`src`** (source) folder.
-- Java source files use the **`.java`** extension.
-- It's best practice to organize source files using **packages**.
+- Java source files use the .java extension.
 
+- It's best practice to organize source files using PACKAGES.
+```
+```
 src
 
 └── javaprograms
 
 └── MyClass.java
 
-
+```
 
 ##  Package 
+```
+- A PACKAGE in Java is like a FOLDER on our computer.
 
-- A **package** in Java is like a folder on our computer.
 Just like a folder can contain many files, a package can contain many Java classes (files).
 
 - Helps in:
@@ -26,19 +29,19 @@ Just like a folder can contain many files, a package can contain many Java class
   - Avoiding name conflicts
   - Controlling access
 
-**Syntax to declare a package:**
+Syntax to declare a package - package javaprograms
 
-package javaprograms;
+package is a RESERVED KEYWORD in Java.
 
-package is a **reserved keyword** in Java.
+Package names should be written in LOWER CASE by convention.
 
-Package names should be written in **lowercase** by convention.
-
+```
 
 ## Java Program Structure
 
 A basic Java class looks like this:
 
+```java
 public class Example {
 
     public static void main(String[] args) {
@@ -50,11 +53,13 @@ public class Example {
         // Code block ends
     }
 }
-
+```
 ## Bracket Visualization
+
 Below is a version of the program that highlights where each block starts and ends:
 
-// Class starts here 👇
+```java
+// Class starts here 
 public class HelloWorld {
 
     // Method starts here 👇
@@ -65,8 +70,9 @@ public class HelloWorld {
 
 } // 👈 Class ends here
 
-
+```
 ##  Key Components Explained
+```
 
 | Part                  | Meaning                          |
 |-----------------------|--------------------------------------------|
@@ -74,23 +80,23 @@ public class HelloWorld {
 | `main(String[] args)` | Entry point of the Java program            |
 | `{ }`                 | Code block boundaries                      |
 | `args`                | Runtime arguments passed during execution  |
-
+```
 
 ## Can We Create a `private` Class?
 
 In Java:
-
+```
 - A **top-level class** is a class declared directly in a `.java` file (outside of any other class).
+
 - A **nested class** is a class defined **inside another class**.
 
----
 
 | Class Type                  | Allowed? | Explanation                                                               |
 |-----------------------------|----------|---------------------------------------------------------------------------|
 | **Top-level private class** | ❌ No     | Java requires the main class to be accessible — `public` or default only. |
 | **Nested private class**    | ✅ Yes    | A private class *inside* another class is allowed, used for hiding logic. |
 
----
+```
 
 **Simple Tip to Remember:**
 
@@ -101,8 +107,10 @@ In Java:
 
 ##  How many Public Classes allowed per java file?
 
+
 Only one public class is allowed per .java file, and the file name must match the public class name.
 
+``` java
 // File name: MyClass.java
 
 
@@ -113,9 +121,11 @@ public class MyClass {
         System.out.println("Hello");
     }
 }
-✅ File name = MyClass.java
 
-✅ One public class = MyClass
+File name = MyClass.java
+
+One public class = MyClass
+```
 
 ## Why multiple public classes not allowed in java?
 
@@ -127,6 +137,7 @@ public class MyClass {
 
 ## What We Cannot Do - Adding multiple public class in a single .java file!
 
+```java 
 // File name: MyFile.java
 
 public class A {
@@ -137,10 +148,10 @@ public class B {
     // ❌ Compilation error: Only one public class is allowed
 }
 
-
+```
 
 ## Summary
-
+```
 Place .java files under src/package_name/.
 
 Always start the file with a package declaration (unless in the default package).
@@ -148,9 +159,9 @@ Always start the file with a package declaration (unless in the default package)
 Only one public top-level class is allowed per .java file.
 
 Class name must match the filename when using public.
+```
 
-
-## Interview Question
+## POINTS 
 
 **Q: Why does Java allow only one public class per `.java` file? What happens if we try to define two public classes in the same file?**
 
