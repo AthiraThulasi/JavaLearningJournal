@@ -10,7 +10,7 @@ It's a simple Java class used mainly to HOLD DATA.
 
 It is a simple Java class that:
 
-	> Only contains PRIVATE  VARIABLES.
+	> Only contains PRIVATE  VARIABLES. 
 
 	> Uses GETTERS and SETTERS to access those variables.
 
