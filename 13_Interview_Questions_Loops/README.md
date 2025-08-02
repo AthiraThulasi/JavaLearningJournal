@@ -1,4 +1,4 @@
-# Loops Interview Questions
+# Loops - Brain Teasers
 
 
 ### Q1. What is a Loop?
@@ -10,9 +10,9 @@ A loop is used to execute a block of code repeatedly until a specified condition
 
 | Loop Type     | Condition Check   | Executes At Least Once? | When to Use                             |
 |---------------|------------------|---------------------------|-----------------------------------------|
-| `for`         | Before loop body | ❌ Only if condition is true | When number of iterations is known     |
-| `while`       | Before loop body | ❌ Only if condition is true | When number of iterations is unknown   |
-| `do-while`    | After loop body  | ✅ Always executes once      | When block must run **at least once**  |
+| `for`         | Before loop body |  Only if condition is true | When number of iterations is known     |
+| `while`       | Before loop body |  Only if condition is true | When number of iterations is unknown   |
+| `do-while`    | After loop body  |  Always executes once      | When block must run **at least once**  |
 
 
 ### Q3. What is the difference between for, while, and do-while loops in Java?
@@ -21,7 +21,7 @@ A loop is used to execute a block of code repeatedly until a specified condition
 | Feature              | `for` loop                          | `while` loop                          | `do-while` loop                        |
 |----------------------|-------------------------------------|----------------------------------------|----------------------------------------|
 | Condition Check      | Before executing the block          | Before executing the block             | After executing the block              |
-| Guaranteed Execution | ❌ No                                | ❌ No                                   | ✅ Yes (executes at least once)        |
+| Guaranteed Execution | No                                  |   No                                   |  Yes (executes at least once)        |
 | Use Case             | Known number of iterations          | Unknown number of iterations           | Run block once, then check condition   |
 
 
