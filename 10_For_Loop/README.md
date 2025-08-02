@@ -2,7 +2,7 @@
 
 **A for loop is used when the number of iterations is known in advance.**
 
-It has **3** parts:
+It has **3** parts: 
 
 ### Initialization – where the loop starts.
 
