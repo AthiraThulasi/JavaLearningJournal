@@ -11,18 +11,15 @@ Syntax >> datatype variableName = value;
 ```java
 int a = 10;
 
++-------------+
+|   a = 10    |
++-------------+
+
 | Code          | Meaning                                                                 |
 | ------------- | ----------------------------------------------------------------------- |
 | int a;        | Declaration – Reserves memory for an integer variable named `a`.        |
 | a = 10;       | Assignment – Assigns the value `10` to the variable `a`.                |
 | int a = 10;   | Initialization – Declaration + Assignment in a single step.             |
-
-
-  Variable             Memory (4 bytes)
-+-----------+         +----------------+
-|   a       | ----->  |       10       |
-+-----------+         +----------------+
-
 
 
 int → Data type
@@ -57,9 +54,9 @@ int age = 25;  // Declaration
 
 
    Variable             Memory (4 bytes)
-+-----------+         +----------------+
-|   age     | ----->  |       25       |
-+-----------+         +----------------+
++-----------+         
+|   age  = 25   
++-----------+        
 
 
 int tells Java to reserve 4 bytes in RAM.
