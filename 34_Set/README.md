@@ -1,4 +1,4 @@
-# SET - Set is the only interface in the Collection framework that is idempotent by design !
+# SET - Set is the only interface in the Collection framework that is idempotent by design ! 
 
 ```
 
