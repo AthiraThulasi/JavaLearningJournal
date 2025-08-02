@@ -1,6 +1,6 @@
 ## Collection  - Brain Teasers!
 
-### Q1: What’s the difference between Collection and Collections?
+### Q1: What’s the difference between Collection and Collections? 
 
 ```
 | Collection                                               | Collections                                            |
