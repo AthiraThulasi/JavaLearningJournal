@@ -9,7 +9,7 @@ Instead of writing the same lines again and again, loops make code **shorter**, 
 
 ---
 
-## Why Do We Need Loops?
+## Why Do We Need Loops?     
 
 Imagine I want to print my name 100 times, I have to write -
 
