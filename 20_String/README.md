@@ -1,7 +1,7 @@
 # String
 
 ### A String is a sequence of characters.  Eg: "java". ( String should be enclosed in double quotes)
-
+ 
 ### String is a class from the java.lang package. It is a non-primitive data type .
 
 ## How to declare a String?
