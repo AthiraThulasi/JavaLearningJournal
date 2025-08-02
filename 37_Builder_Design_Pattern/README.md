@@ -2,7 +2,7 @@
 ```
 Before diving into the Builder Design Pattern, let’s revisit why we use constructors and how they help in object creation ?
 ```
-## Constructor and Object Creation – A Quick Recap 
+## Constructor and Object Creation – A Quick Recap  
 ```
 When we create an object, the class gets loaded into memory.
 
