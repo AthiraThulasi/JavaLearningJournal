@@ -18,6 +18,13 @@ int a = 10;
 | int a = 10;   | Initialization – Declaration + Assignment in a single step.             |
 
 
+  Variable             Memory (4 bytes)
++-----------+         +----------------+
+|   a       | ----->  |       10       |
++-----------+         +----------------+
+
+
+
 int → Data type
 
 a → Variable name
@@ -47,6 +54,13 @@ Variables allow us to access and manipulate stored data by referring to the vari
 ```java
 
 int age = 25;  // Declaration
+
+
+   Variable             Memory (4 bytes)
++-----------+         +----------------+
+|   age     | ----->  |       25       |
++-----------+         +----------------+
+
 
 int tells Java to reserve 4 bytes in RAM.
 
