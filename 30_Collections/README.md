@@ -7,7 +7,7 @@ Java Collection Framework (JCF) is a UNIFIED ARCHITECTURE that provides a set of
 It was designed to bring all commonly used data structures under one standardized structure, making them easier to use, manage, and extend.
 ```
 
- ## Why was JCF Introduced?
+ ## Why was JCF Introduced?  
 
 Before JCF, Java had multiple unrelated classes (like Vector, Hashtable, etc.) for handling collections. 
 
