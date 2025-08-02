@@ -1,6 +1,6 @@
 #  Do-While Loop
 
-**The do-while loop excecutes once whether the condition is True or False.**
+**The do-while loop excecutes once whether the condition is True or False.** 
 
  ## Syntax
 
