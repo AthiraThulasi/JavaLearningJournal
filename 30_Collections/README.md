@@ -2,11 +2,41 @@
 
 ## Java Collection Framework (JCF) - Introduced in java 1.2 
 ```
-Java Collection Framework (JCF) is a UNIFIED ARCHITECTURE that provides a set of classes and interfaces to store, retrieve, manipulate, and communicate aggregate data efficiently.
+> Java Collection Framework (JCF) is a UNIFIED ARCHITECTURE that provides a set of classes and interfaces to store, retrieve, manipulate, and communicate aggregate data efficiently.
 
-It was designed to bring all commonly used data structures under one standardized structure, making them easier to use, manage, and extend.
+> It was designed to bring all commonly used data structures under one standardized structure, making them easier to use, manage, and extend.
+```
 ```
 
+                   ┌────────────────────┐
+                   | Iterable (interface)
+                   └────────▲───────────┘
+                            │
+                         extends
+                            │
+                ┌────────────────────────┐
+                | Collection (interface) |
+                └───────▲────▲────▲──────┘
+                        │    │    │
+                    extends │  extends
+                            │
+     ┌──────────────── ┐ ┌───────────────┐  ┌────────────────────────┐
+     | List (interface)| | Set (interface)| | Queue (interface)      |
+     └──────▲──────────┘ └──────▲─────────┘ └────────▲────────────── ┘
+            │                   │                      │
+        implements          implements         implements
+            │                   │                      │
+ ┌────────────────────┐ ┌────────────────────┐ ┌────────────────────────────┐
+ | ArrayList (class)  | | HashSet (class)    | | PriorityQueue (class)      |
+ |LinkedList (class)  | | LinkedHashSet      | | ArrayDeque (class)         |
+ | Vector (class)     | | TreeSet (class)    | |                            |
+ | Stack (class)      | └────────────────────┘ | LinkedList (class)         |
+ └────────────────────┘                        | (also implements Deque)    |
+                                                ────────────────────────────┘
+
+LinkedList implements List & Deque (double-ended queue)
+
+```
  ## Why was JCF Introduced?  
 
 Before JCF, Java had multiple unrelated classes (like Vector, Hashtable, etc.) for handling collections. 

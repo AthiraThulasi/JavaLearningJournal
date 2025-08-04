@@ -53,7 +53,7 @@ This is the **starting point** of the program.
 
 Java **execution begins with the main()** method.
 
-•   main() must be **public static** or JVM won't start execution.
+•   main() must be PUBLIC STATIC or JVM won't start execution.
 
 •	public: So that JVM can access it from anywhere.
 
@@ -63,7 +63,7 @@ Java **execution begins with the main()** method.
 
 •	Java only executes methods, not entire classes directly.
 
-Execution happens inside **Stack Memory**, which is a **LIFO (Last In First Out)** data structure — the most efficient memory area in the Java for method execution.
+Execution happens inside STACK MEMORY, which is a LIFO (Last In First Out) data structure — the most efficient memory area in the Java for method execution.
 
 A **data structure** defines how data is organized and stored in memory so it can be accessed and managed efficiently.
  ```
@@ -153,7 +153,7 @@ Prints the value of variable a to the console.
 ```
 This marks the **end of the main() method**.
 
-Once it ends, all local variables that were pushed onto the stack are now popped out — the stack is cleared for that method call.
+When the method ends, all the local variables created inside the stack are removed and stack is cleared, and he program ends.
  ```
 
 ### Line 11: } // class closing brace
