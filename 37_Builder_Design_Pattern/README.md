@@ -92,26 +92,35 @@ Finally, we call .build() — and boom - we get a complete object.
 So, since it BUILDS THE OBJECTS IN PARTS and then combines them into a final form — it's called the BUILDER DESIGN PATTERN!
 
 ```
+---
 ## How builder design pattern works?
 
-### Step 1: Create an Outer Class
-### Step 2: Create a static inner class
-### Step 3: Declare Same Instance Variables
-### Step 4: Create Setter Methods in Builder
-### Step 5: Create a Constructor in the Main Class
-### Step 6: Add a build() Method in Builder
-### Step 7: Use the Builder in Runner Class
+**Step 1: Create an Outer Class**
 
-## Step 1 : Create an Outer Class
+**Step 2: Create a static inner class**
+
+**Step 3: Declare Same Instance Variables**
+
+**Step 4: Create Setter Methods in Builder**
+
+**Step 5: Create a Constructor in the Main Class**
+
+**Step 6: Add a build() Method in Builder**
+
+**Step 7: Use the Builder in Runner Class**
+
+---
+### Step 1 : Create an Outer Class
 
 ```java
-public class SimpleBuilderForStudent { // Main Class
-    private final String name;
-    private final int rollNumber;
+public class SimpleBuilderForStudent { //  Outer Class
+    private final String name; // Mandatory 
+    private final int rollNumber; 
     private final String course;
-    private final Integer phoneNumber; // optional
+    private final Integer phoneNumber;  // Non - Mandatory
+    }
 ```
-}
+
 ```Create an OUTER CLASS and declare the instance variables .
 
 Mark all instance variables as final helps make your object immutable — which is one of the big reasons to use the Builder pattern in the first place!
