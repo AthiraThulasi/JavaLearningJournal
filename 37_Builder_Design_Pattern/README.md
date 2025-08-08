@@ -341,6 +341,17 @@ If you skip setCourse() >> it will stay as null.
 
 We don’t need any special logic — just don’t call the setter!
 ```
+
+## Do we need to write the setter method for an optional field?
+```
+ Yes, you should write the setter — even if it's optional.
+```
+## But why write it if we’re not always passing values?
+```
+Because the Builder Pattern gives users the choice to set only the fields they want. We’re not forcing them — we’re just making the option available.
+
+Even if the field is not always set, it’s part of the class design — and without the setter: The user can’t set the value even if they want to and object becomes inflexible and incomplete.
+```
 ## Builder Design code with comments !
 
 ```java
@@ -395,9 +406,12 @@ public class SimpleBuilderForStudent {
             return this;
         }
 
-        public Builder setPhoneNumber(int phoneNumber) {
-            this.phoneNumber = phoneNumber;
-            return this;
+        // Optional field: phoneNumber
+       public Builder setPhoneNumber(int phoneNumber) {
+           this.phoneNumber = phoneNumber;
+           return this;
+}
+
         }
 
         public Builder setCourse(String course) {
