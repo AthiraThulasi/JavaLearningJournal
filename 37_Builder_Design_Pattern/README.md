@@ -157,7 +157,7 @@ private SimpleBuilderForStudent(?????) // Constructor parked without passing any
 
 ```
 
-## Step 2: Create a static inner class & declare the same instance variables as outer class
+## Step 2: Create a static inner class & Step 3: declare the same instance variables as outer class
 
 ```
 Static Inner Class - Create a STATIC INNER CLASS called - "Builder" inside our outer class.
@@ -168,7 +168,7 @@ It uses the same variables as the outer class (but without final).
 
 This inner Builder class acts as a data carrier.
 
-IAnstead of passing each value separately to the outer class constructor > we pass the whole Builder object — which contains all the necessary values.
+Instead of passing each value separately to the outer class constructor > we pass the whole Builder object — which contains all the necessary values.
 
 So now we clearly understand whom we should pass to the constructor —It’s the Builder, not the individual variables.
 
@@ -348,14 +348,14 @@ We don’t need any special logic — just don’t call the setter!
 
 public class SimpleBuilderForStudent {
 
-    // Instance variables of the outer class
-    private String name;        // Mandatory
-    private int rollNumber;     // Mandatory
-    private int phoneNumber;    // Optional
-    private String course;      // Mandatory
+  
+    // Making instance variables final to ensure immutability after object creation
+    private final String name;        // Mandatory
+    private final int rollNumber;     // Mandatory
+    private final int phoneNumber;    // Optional
+    private final String course;      // Optional
 
-    // Step 5: Constructor of outer class accepts Builder object
-    // Instead of passing each field, we pass the Builder object
+    // Step 5: Constructor of outer class accepts Builder object - Instead of passing each field, we pass the Builder object
     private SimpleBuilderForStudent(Builder builder) {
         this.name = builder.name;
         this.rollNumber = builder.rollNumber;
@@ -377,7 +377,7 @@ public class SimpleBuilderForStudent {
     // Step 2: Static Inner Builder Class
     public static class Builder {
 
-        // Step 3: Declare same fields as outer class
+    // Step 3: Declare same fields as outer class
         private String name;
         private int rollNumber;
         private int phoneNumber;
