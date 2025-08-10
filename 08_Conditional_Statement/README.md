@@ -1,49 +1,55 @@
-# 📘 Conditional Statements
+#  Conditional Statements
 
-
-**Java executes code sequentially, line by line.** 
+```
+Java executes code sequentially, line by line.
 
 But if, we want to control the flow based on certain conditions — that’s where conditional statements help.
 
-Conditional statements in Java:
---------------------------------
+```
+### Conditional statements in Java:
 
-**if**
+```
+if
 
-**if-else**
+if-else
 
-**if-else-if**
+if-else-if
 
-**switch**
+switch
+
+```
+
+# 1. if Statement
 
 
-## 1. if Statement
-**Syntax:**
--------------
+```java
+
+// Syntax
 
 if (condition) {
 
     block of code to execute **if condition is true**
 }
+```
+## How it works ?
+```
 
-**How it works:**
-------------------
+ If the condition is true, Java executes the immediate next statement or code block.
 
-✅ If the condition is true, Java executes the immediate next statement or code block.
+If the condition is false, Java skips the next statement/block.
+```
+## Example 1: Single Statement
 
-❌ If the condition is false, Java skips the next statement/block.
-
-**Example 1: Single Statement**
---------------------------------
-
+```java
 int c = 100;
 
 if (c > 50)
 
     System.out.println("C is greater than 50");
+```
 
-Example 2: Code Block with Multiple Lines
-------------------------------------------
+## Example 2: Code Block with Multiple Lines
+```java
 
 if (c > 5) {
 
@@ -54,9 +60,9 @@ if (c > 5) {
     System.out.println("Are you learning java");
 
 }
-
-Example 3: False condition  without braces
---------------------------------------------
+```
+## Example 3: False condition  without braces
+```java
 
 int c = 10 + 5;
 
@@ -65,44 +71,47 @@ if (c > 10)  // False
 System.out.println("C is lesser than 10"); // skipped
 
 System.out.println("C is greater than 10"); //  This is outside the if - always executed
-
-**Java's Rule for if Without Braces {}**
+```
+## Java's Rule for if Without Braces {}
+```
 When we write an if statement without {}, only the immediate next line (the first one) is treated as part of the if.
+```
 
+## Example 4: Using & (bitwise AND) with two conditions
 
-Example 4: Using & (bitwise AND) with two conditions
-----------------------------------------------------
+```java
 int a = 100;
 int b = 20;
 
 if (a > b && b > a) {
 
-    System.out.println("a is greater than b");
+    System.out.println("a is greater than b");    // Code block will only be excecuted, if both conditions are true!
 
     System.out.println("b is greater than a");
 
 }
+```
 
-**Code block will only be excecuted, if both conditions are true!**
 
-**Condition Analysis:**
+## Condition Analysis:
+```
+a > b → 100 > 20 →  true
 
-a > b → 100 > 20 → ✅ true
+b > a → 20 > 100 → false
 
-b > a → 20 > 100 → ❌ false
-
-true && false → ❌ false
-
-**Notes:**
+true && false →  false
+```
+## Notes
 ------------
-Always use **curly braces {}** if the if block has **more than one line**.
+```
+Always use curly braces {} if the if block has more than one line.
 
 If the block isn’t executed (condition is false), it becomes a dead code block.
+```
+## if Block Execution
 
-if Block Execution
--------------------
 
-```plaintext
+```java
 if (c > 10)
      |
    True
@@ -120,10 +129,10 @@ Skip the next statement(s)
 
 # 2. if else
 --------------
-
-**The if-else statement lets you choose between two blocks of code based on whether the condition is true or false**
-
-```plaintext
+```
+The if-else statement lets you choose between two blocks of code based on whether the condition is true or false**
+```
+```java
         condition
             |
          +--+--+
@@ -134,10 +143,8 @@ Skip the next statement(s)
    block        block
 ```
 
-
-
  Syntax:
-
+```java
 if (condition) {
 
     // executes if condition is true
@@ -146,9 +153,10 @@ if (condition) {
 
     // executes if condition is false
 }
+```
+### Example:
 
- **Example:**
----------------
+```java
 
 int a = 10;
 
@@ -167,21 +175,21 @@ if (a > b) {
 Output:
 
 Since a > b is false, the output will be: b is greater
-
-Key Concept:
---------------
+```
+### Key Concept:
+```
 The if block runs if the condition is true
 
 The else block runs if the condition is false
 
 Only one of the two blocks will execute
-
-Tip :
-------
+```
+### Tip
+```
 Used when you have exactly two outcomes.
 
 Avoid using else without if — they always work as a pair
-
+```
 
 # 3. if-else-if Ladder
 -------------------------
@@ -202,13 +210,13 @@ Avoid using else without if — they always work as a pair
                        ↓       ↓
                     Block3   Else block
 ```
-
+```
 The if-else-if ladder is used when you need to check multiple conditions (sequential checks), one after another.
 
 It allows you to choose one block out of many based on which condition is true first.
-
+```
  ## Syntax:
-
+```java
 if (condition1) {
 
     // runs if condition1 is true
@@ -225,9 +233,9 @@ if (condition1) {
 
     // runs if none of the above are true
 }
-
-**Example**
-------------
+```
+## Example
+```java
 
 int percentage = 75;  
 
@@ -263,13 +271,13 @@ if (percentage > 90) {           //  Grade Assignment Based on Valid Percentage
 
 System.out.println("Grade: " + grade);
 
-
+```
 ## 4.Switch Statement
 ----------------------
-
-**A switch statement is used when we have multiple fixed values to compare against one variable.**
-
-Syntax 
+```
+A switch statement is used when we have multiple fixed values to compare against one variable.**
+```
+```java
 
 switch (expression) {
 
@@ -290,20 +298,21 @@ switch (expression) {
     default:
         // default block (optional)
 }
+```
+### Key Points
+```
 
-**Key Points**
-----------------
+switch	    Starts the block that checks different values
 
-**switch**	Starts the block that checks different values
+case	    Each possible value to match
 
-**case**	Each possible value to match
+break	    Exits the switch after a match is found
 
-**break**	Exits the switch after a match is found
+default 	(Optional) Runs if no case matches
 
-**default**	(Optional) Runs if no case matches
-
-**Example: Switch Based on Grade**
---------------------------------------
+```
+## Example: Switch Based on Grade
+```java
 
 char grade = 'B';
 
@@ -333,23 +342,26 @@ switch (grade) {
     default:
         System.out.println("Invalid grade");
 }
+```
+## How It Works?
+```java
 
- **How It Works:**
-------------------
+If grade = 'B'?
 
-If grade = 'B', Java checks:
+Java checks: 
 
-Is it 'A'? ❌
+(1) Is it 'A'?  No
 
-Is it 'B'? ✅ → prints "Very Good!" and exits
+(2) Is it 'B'? Yes → prints "Very Good!" and exits
 
-**Interview Tip:**
+```
+### Note
 ---------------------
-
+```
 Works with byte, short, int, char, String, and enums (not float, double).
 
 Without break, all below cases will execute ("fall-through").
-
+```
 
 
 
