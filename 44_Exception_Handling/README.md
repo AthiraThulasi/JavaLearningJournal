@@ -462,7 +462,7 @@ But still let the caller method decide the final handling.
 ```
 
 ## 21. Why does an exception occur?
-``
+```
 Because something unexpected happens in our code:
 
 - File not found
