@@ -208,6 +208,8 @@ Stack Memory                  Heap Memory
 ```
 java executes RHS first → new Student():
 
+new keyword = always creates a new object in the heap.
+
 When ever an object is created 3 things happen -
 
 Step 1: Student class is loaded into memory .
