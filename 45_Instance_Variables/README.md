@@ -213,7 +213,6 @@ s1.name = "Neil";
 ```
 
 ```
-Step-by-step explanation:
 
 Java checks where s1 is stored — it’s a local variable in stack memory (s1 is a local variable inside main() method).
 
