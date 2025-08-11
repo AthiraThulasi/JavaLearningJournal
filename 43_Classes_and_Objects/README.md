@@ -54,25 +54,24 @@ This shows how an object is a real instance of a class, with its own unique prop
 
 ```java
 
- 1. public class Student {    // Student is the class name
- 2.     
- 3.     int age;
- 4.     int rollNumber;
- 5.     double marksObtainedInEnglish;        // variables created inside the class → instance variables - stored in Heap memory
- 6.     String name;                          // instance variables are properties of class
- 7.     double marksObtainedInMaths;
- 8.     double marksObtainedInScience;
- 9.     String grade;
-10. 
-11.     // Functionality → task / Non - static Method - which performs calculation of marks
-12.     public void calculateTotalMarks() {// Method name should describe the action it performs
+1. package com.student.management.system.oops;
 
-13.         double totalMarks = marksObtainedInEnglish + marksObtainedInMaths + marksObtainedInScience;
-
-14.         System.out.println("Total Marks Obtained: " + totalMarks); // print the result
-15.     }
-16. }
-
+2. public class Student {    // Student is the class name
+3.     
+4.     int age;
+5.     int rollNumber;
+6.     double marksObtainedInEnglish;        // variables created inside the class → instance variables - stored in Heap memory
+7.     String name;                          // instance variables are properties of class
+8.     double marksObtainedInMaths;
+9.     double marksObtainedInScience;
+10.    String grade;
+11. 
+12.    // Functionality → task / Non - static Method - which performs calculation of marks
+13.    public void calculateTotalMarks() { // Method name should describe the action it performs
+14.        double totalMarks = marksObtainedInEnglish + marksObtainedInMaths + marksObtainedInScience;
+15.        System.out.println("Total Marks Obtained: " + totalMarks); // print the result
+16.    }
+17. }
 ```
 
 ## Instance Variables
@@ -94,17 +93,16 @@ To execute the program, we need a main method.
 Best practice → Name the executable class as Runner (class containing the main method).
 ```
 ```java
+1. package com.student.management.system.oops;
 
- 1. public class Runner {                   // Class that contains the main method
-
- 2.     public static void main(String[] args) {  // Entry point of the program
-
- 3.         int x = 10;                     // Local variable in stack memory
- 4.         int[] y = new int[3];           // Array object in heap, reference in stack
- 5.         Student s1 = new Student();     // Creating a Student object in heap
- 6.     }
- 7. }
-
+2. public class Runner {                   // Class that contains the main method
+3. 
+4.     public static void main(String[] args) {  // Entry point of the program
+5.         int x = 10;                     // Local variable in stack memory
+6.         int[] y = new int[3];           // Array object in heap, reference in stack
+7.         Student s1 = new Student();     // Creating a Student object in heap
+8.     }
+9. }
 ```
 ## Local Variable
 ```
@@ -116,26 +114,32 @@ Variables created inside a method are called Local Variables.
 
 - Their lifetime is only until the method finishes execution, after that, they are removed from the stack.
 
+```
+``` java
 public void show() {
 
     int x;  // Local variable, no default value
     
     System.out.println(x); //  Compile-time error: variable x might not have been initialized
 }
-
-
 ```
+
 
 ## Program Execution Flow
-```
-Java executes the program line by line:
-```
 
-### Line 1 → public class Runner
+**Java executes the program line by line:**
+
+### Line 1 → package com.student.management.system.oops;
+```
+A package is like a folder that groups related classes together.
+
+It also helps avoid name conflicts between classes with the same name in different projects.
+```
+### Line 2 → public class Runner
 ```
 java enters this class only if it has a valid main method.
 ```
-### Line 2 → public static void main( )
+### Line 4 → public static void main( )
 ```
 Execution starts here.
 
@@ -148,7 +152,7 @@ The stack top pointer now points to main().
 |  main()                   |  ← top pointer
 +---------------------------+
 ```
-### Line 3 → int x = 10;
+### Line 5 → int x = 10;
 ```
 java excecutes RHS first → evaluate 10.
 
@@ -168,7 +172,7 @@ top -> | main()   | x = 10              |
 +---------------------------------------+
 ```
 
-### Line 4 → int[] y = new int[3];
+### Line 6 → int[] y = new int[3];
 ```
 java executes RHS first → `new int[3]` creates an array object in the heap with 3 memory slots.
 
@@ -189,7 +193,7 @@ Stack Memory                  Heap Memory
                                |   0   1   2                |
                                +----------------------------+
  ```                             
-### Line 5 → Student s1 = new Student();
+### Line 7 → Student s1 = new Student();
 ```
            Student s1 = new Student();
 
@@ -203,6 +207,8 @@ Stack Memory                  Heap Memory
 ```
 ```
 java executes RHS first → new Student():
+
+When ever an object is created 3 things happen -
 
 Step 1: Student class is loaded into memory .
 
@@ -229,7 +235,30 @@ Stack Memory                   Heap Memory
                               | | rollNumber = 0                |   |
                               | +------------------------------+   |
                               +------------------------------------+
- ```                             
+ ``` 
+
+### Line 8 → } (method closing brace)
+
+```
+Marks the end of the main() method.
+
+When main() ends, the stack frame for main is removed (popped) from the stack memory.
+
+All local variables (x, y, s1) are destroyed — but the objects they pointed to in heap remain in memory until garbage collection runs.
+```
+```
+Stack Memory (after main ends)
++---------------------------+
+|  (empty — main removed)   |
++---------------------------+
+```
+
+### Line 9 → } (class closing brace)
+```
+Marks the end of the Runner class.
+
+At this point, program execution is complete (unless there are other threads running).
+```                            
 ### Note:
 ```
 
