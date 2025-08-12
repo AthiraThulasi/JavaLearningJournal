@@ -315,7 +315,7 @@ SimpleBuilderForStudent student = new SimpleBuilderForStudent.Builder()
                                        .build(); //  Creates the final object
 
 ```
-## What does .build() do?
+### What does .build() do?
 ```
 .build() is a method defined inside the static Builder class.
 
@@ -327,32 +327,32 @@ The constructor extracts all the values from the Builder object and initializes 
 
 This works because both the Builder class and the constructor exist inside the same outer class, even if the constructor is private.
 ```
-## How to handle Optional Fields in Builder ?
+### How to handle Optional Fields in Builder ?
 ```
 In the Builder pattern, if a field is optional (like phoneNumber) - we simply don’t call its setter in the Runner class.
 
 The field will take its default value (e.g., 0 for int, null for String).
 ```
-## Notes:
+### Notes:
 ```
 If we skip setPhoneNumber( ) >> it will stay as default 0.
 
-If you skip setCourse() >> it will stay as null.
+If we skip setCourse() >> it will stay as null.
 
 We don’t need any special logic — just don’t call the setter!
 ```
 
-## Do we need to write the setter method for an optional field?
+### Do we need to write the setter method for an optional field?
 ```
- Yes, you should write the setter — even if it's optional.
+ Yes, we should write the setter — even if it's optional.
 ```
-## But why write it if we’re not always passing values?
+### But why write it if we’re not always passing values?
 ```
 Because the Builder Pattern gives users the choice to set only the fields they want. We’re not forcing them — we’re just making the option available.
 
 Even if the field is not always set, it’s part of the class design — and without the setter: The user can’t set the value even if they want to and object becomes inflexible and incomplete.
 ```
-## Builder Design code with comments !
+### Builder Design code with comments !
 
 ```java
   package builderdesignpatternpractice;
