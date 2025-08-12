@@ -79,7 +79,7 @@ We can achieve encapsulation - by declaring the instance variable private.
 ```
 ## How can we access a private variable inside main()?
 ```
-we can access a private instance variable inside main - by Using public methods such as getters and setters.
+we can access  private instance variables inside main - by Using public methods such as getters and setters.
 
 Getter → Retrieves the value of a private instance variable.
 
