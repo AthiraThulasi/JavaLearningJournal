@@ -212,7 +212,11 @@ new keyword = always creates a new object in the heap.
 
 When ever an object is created 3 things happen -
 
-Step 1: Student class is loaded into memory .
+Step 1: Student class is loaded into memory called Method Area
+
+                 Methd Area - Stores class-level information — not per-object data. 
+                 Method Area is part of JVM memory from the start, but it’s empty until classes are loaded.
+                 Created when the class is first loaded by the JVM (before any object is created).
 
 Step 2: Instance variables are created in heap and initialized with default values.
 
