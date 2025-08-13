@@ -225,7 +225,7 @@ There is no conflict because they are in different memory locations.
 
 ```
 
-## ## Line 13 (Student Class):Role of "this" Keyword !
+## Line 13 (Student Class):Role of "this" Keyword !
 
 ```
 
