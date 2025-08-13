@@ -307,7 +307,7 @@ s1.setRollNumber(-10) tells Java - Look at the object s1 is pointing to, Go into
 
 Roll num (local variable) is set as -10 inside the stack .
 ```
-## Line 17 (Student Class)
+## Line 17 (Student Class) - How validation works inside setter?
 
 ``` java
 17. public void setRollNumber(int rollNumber){
