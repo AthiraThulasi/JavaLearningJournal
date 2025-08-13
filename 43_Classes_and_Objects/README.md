@@ -214,7 +214,7 @@ When ever an object is created 3 things happen -
 
 Step 1: Student class is loaded into memory called Method Area
 
-                 Methd Area - Stores class-level information — not per-object data. 
+                 Method Area - Stores class-level information — not per-object data. 
                  Method Area is part of JVM memory from the start, but it’s empty until classes are loaded.
                  Created when the class is first loaded by the JVM (before any object is created).
 

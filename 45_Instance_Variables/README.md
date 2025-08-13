@@ -72,7 +72,11 @@ RHS : new Student();
 
  When an object is created in the heap, 3 things happen in order:
 
-      Step 1: The Student class is loaded into memory.
+      Step 1: The Student class is loaded into memory called Method Area.
+
+                 Method Area - Stores class-level information — not object data. 
+                 Method Area is part of JVM memory from the start, but it’s empty until classes are loaded.
+                 class loading into the Method Area happens only the first time when we use that class in our program. Class loading is done by class loader
 
       Step 2: Instance variables for that object are created in heap and initialized with default values (e.g., int = 0, String = null).
 
