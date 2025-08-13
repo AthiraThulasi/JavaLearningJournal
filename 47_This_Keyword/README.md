@@ -212,10 +212,10 @@ Remember - When we created the "Student" object -  a "name" variable is created 
 
 ```
 
-## Two Variables Named name
+## Two Variables Named "name"
 ```
 
-So now, we have two different variables with the same name:
+So now, we have two different variables with the same name - "name":
 
            (1) One in the stack → method parameter.
 
