@@ -1,4 +1,15 @@
-# POJO Class 
+
+#  Bringing It All Together: Setters, Getters & Constructors → POJO
+
+```
+Now that we have learned:
+
+(1) How to make variables private ?
+(2) How to create public setter and getter methods ?
+(3) How to define constructors to initialize objects ?
+
+It’s time to bring all of these together to create something powerful yet simple — a POJO class!
+```
 
 ## What is a POJO Class?
 ```
@@ -10,13 +21,13 @@ It's a simple Java class used mainly to HOLD DATA.
 
 It is a simple Java class that:
 
-	> Only contains PRIVATE  VARIABLES. 
-
-	> Uses GETTERS and SETTERS to access those variables.
-
-	> Has no logic, no inheritance, no annotations, no framework-specific code
+	> Only contains PRIVATE VARIABLES  
+	> Uses GETTERS and SETTERS to access those variables  
+	> May include a CONSTRUCTOR to initialize values  
+	> Has NO logic, NO inheritance, NO annotations, NO framework-specific code
 
 Basically, it’s just a CLEAN CONTAINER OF DATA
+
  ```
 ## POJO Class Example
 
@@ -24,8 +35,8 @@ Basically, it’s just a CLEAN CONTAINER OF DATA
 
 To store info about a person - name and age:
 
-public class Person {
-    private String name;
+public class Person { 
+    private String name;  //private instance variables
     private int age;
 
     // Constructor
@@ -63,7 +74,7 @@ No logic, no extends, no implements, no annotations > just pure data holding.
 
 ```
 
-## ✅ Summary: POJO 
+## Summary: POJO 
 
 ```
 
