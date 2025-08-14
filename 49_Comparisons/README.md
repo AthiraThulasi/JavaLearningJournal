@@ -70,3 +70,17 @@ System.out.println(x);  // Error: variable x might not have been initialized
 ```
 
 
+## Constructors Vs Setters
+
+
+| Constructor                                                                          | Setter                                                                         
+| -------------------------------------------------------------------------------------| ------------------------------------------------------------------------------ |
+| Special method with the SAME NAME AS CLASS                                           | NORMAL METHOD follows camelCase naming.                                        |
+| Has NO RETURN TYPE                                                                   | Has a return type (commonly `void`).                                           |
+| Called ONCE during object creation.                                                  | Can be called **multiple times** after object creation.                        |
+| Used to INITIALIZE instance variables.                                               | Used to UPDATE/CHANGE instance variables.                                      |
+| If only constructors are used → object is **Immutable** (values fixed after creation).| Using setters makes object **Mutable** (values can be updated).                |
+| Can be **overloaded** (multiple constructors with different parameters).             | Setters are **not overloaded**, but multiple setters exist (one per variable). |
+| Values are assigned only **once** when the object is created.                        | Values can be updated **any number of times**.                                 |
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
