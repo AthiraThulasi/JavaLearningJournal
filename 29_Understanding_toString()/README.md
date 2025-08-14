@@ -1,76 +1,73 @@
 ## toString() Method in Java
 
-## 1. What is toString()?
+##  What is toString()?
 
 ```
-
-toString() is a method that converts an object into a string representation.
+toString() is a method that converts an object into a string representation - It returns an one line description of the object's instance variables.
 
 toString() is defined in the Object class, which is the parent of all Java classes.
 
-toString() Returns a String value (one-line description of object’s instance variables).
+```
+## ToString Method - Code - How the o/p looks like?
+
+```java
+@Override
+    public String toString() {
+        return "Student [name=" + name + ", age=" + age + ", rollNumber=" + rollNumber + "]";
+    }
+```
+```
+OUTPUT - Student [name=Neil, age=10, rollNumber=30]
+```
+## Without toString() - What is going to be the o/p?
 
 ```
+s1 is the reference variable which store hashcode of the object
 
-2. Why use toString()?
+If we print s1 without toString() - system.out.print(s1) - s1 returns hashcode >> com.student.management.system.oop.Student@512ddf17
 
-Helps during debugging or logging, so you can see the exact values of variables.
+```
+##  Why use toString()?
+
+```
+Helps during debugging or logging, so we can see the exact values of variables.
 
 Without overriding, calling System.out.println(obj) prints the hashcode by default.
 
 Overriding allows printing meaningful data about the object.
 
-3. Behavior Without toString() Override
-Student s1 = new Student("Uday", 17, 25, 80, 70, 71, "B");
+```
 
-System.out.println(s1);           
-// Prints: Student@2f92e0f4 (className@hashCode)
-
-System.out.println(s1.getName()); 
-// Prints: Uday
-
-4. Behavior With toString() Override
-@Override
-public String toString() {
-    return "Student [name=" + name + ", age=" + age + 
-           ", rollNumber=" + rollNumber + ", marks=" + marks + "]";
-}
-
-
-Output:
-
-Student [name=Uday, age=17, rollNumber=33, marks=80...]
-
-5. Default Implementation of toString()
-
-Defined inside Object class:
-
+## How toString() looks internally (inside Object class) ?
+```java
 public String toString() {
     return getClass().getName() + "@" + Integer.toHexString(hashCode());
 }
+```
+## What happens step by step ?
+```
+getClass().getName() >> Gets the runtime class of the object (e.g., Person, Student, Car).
 
+Example → "Person"
 
-getClass().getName() → class name of object
+hashCode() >> Returns a unique number (int) that represents the object in memory.
 
-hashCode() → unique identifier of object in memory (converted to hex)
+Example → 2052879
 
-6. Example
-class Person {}
+Integer.toHexString(hashCode()) >> Converts that number into hexadecimal format.
 
-public class Main {
-    public static void main(String[] args) {
-        Person p = new Person();
-        System.out.println(p);
-    }
-}
+Example → "7a81197d"
+
+Then it combines them like: Person@7a81197d
 
 
 Output (default):
 
 Person@7a81197d
+```
+## Summary
 
-7. Key Points (Summary)
-
+```
 toString() exists in Object class, so all Java objects have it.
 
 Default → className@hashCode.
@@ -78,3 +75,4 @@ Default → className@hashCode.
 Overriding → meaningful object data.
 
 Best practice → always override toString() for user-defined classes.
+```
