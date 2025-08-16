@@ -440,7 +440,7 @@ Child can access only non-private features of parent
 
 
 ```                                                      ```                                                               ```
-## Runner Class  for A                                   ## Runner Class  for B                                            ## Runner Class  for C
+## Runner Class  for A , B & C                                                                            
 ```java                                                                                                                                                      
                                                                                                                                 
 1 public class ARunner {                                  public class BRunner {                                            public class CRunner {
