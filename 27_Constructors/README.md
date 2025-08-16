@@ -214,6 +214,15 @@ public Person(String name, int id) {
     this.id = id;
 }
 ```
+## What is the benefit of Constructor overloading?
+```
+We want to give flexibility when creating objects :
+
+    > Sometimes we may only know the name.
+
+    > Sometimes both name and id.
+
+```
 ## Private Constructors - why we need private constructors?
 ```
 When we make a constructor private - we cannot create object outside the class.
