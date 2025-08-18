@@ -1,6 +1,20 @@
 
 # Accessing instance Variables
 
+## What are Instance Variables?
+```
+Instance variables are variables declared inside a class but outside any method, constructor, or block.
+
+Instance variables are stored in heap memory along with the object, and if not explicitly initialized, they are automatically assigned default values.
+```
+```java
+class Student {
+    String name;    // instance variable
+    int age;        // instance variable
+    double marks;   // instance variable
+}
+
+```
 ## Part 1 – Defining Instance Variables in a Class
 
 ```
