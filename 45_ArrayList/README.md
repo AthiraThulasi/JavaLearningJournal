@@ -16,9 +16,7 @@ No — because:
 
  Why use ArrayList?
 
-•	ArrayList is part of the Java Collection Framework.
-
-•	It is a resizable array (dynamic), meaning it can grow or shrink in size.
+•	ArrayList is a resizable array (dynamic), meaning it can grow or shrink in size.
 
 •	It stores elements in a contiguous memory structure, allowing fast access.
 ```
