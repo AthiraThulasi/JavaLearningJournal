@@ -1,33 +1,34 @@
 # Loops
 
 
-## ✅ What is a Loop?
-
-A **loop** allows us to execute a block of code **multiple times** based on a condition.
+##  What is a Loop?
+```
+A loop allows us to execute a block of code MULTIPLE TIMES based on a condition.
 
 Instead of writing the same lines again and again, loops make code **shorter**, **efficient**, and **less error-prone**.
-
----
-
-## Why Do We Need Loops?     
-
-Imagine I want to print my name 100 times, I have to write -
-
-## Without a loop
-
-```java
-System.out.println("Athira");
-System.out.println("Athira");
-System.out.println("Athira");
-// ... and so on, 100 times            ❌ Very lengthy and hard to maintain!
 ```
 
 
+## Why Do We Need Loops?     
+```
+Imagine we want to print a name 100 times, without a LOOP, we have to write -
+
+```
+
+```java
+
+System.out.println("Athira");
+System.out.println("Athira");
+System.out.println("Athira");
+
+// ... and so on, 100 times             Very lengthy and hard to maintain!
+
+```
 
 ## With Loop 
 
-
-✅ We can automate repetition efficiently.
+```
+ We can automate repetition efficiently.
 
 
 (1) Define where to start (initialization),
@@ -38,35 +39,38 @@ System.out.println("Athira");
 
 This way, we write less code, avoid repetition, and make our programs clean and maintainable.
 
-
+```
 
 ## Types of Loops in Java
 
+```
 Java provides three main types of loops:
 
 
 | Loop Type       | Description                                                 |
 | --------------- | ----------------------------------------------------------- |
-| `for` loop      | Used when the number of iterations is **known** in advance. |
-| `while` loop    | Used when the number of iterations is **not known** ahead.  |
-| `do-while` loop | Similar to `while`, but **executes at least once**.         |
+| FOR loop        | Used when the number of iterations is KNOWN in advance.     |
+| WHILE loop      | Used when the number of iterations is NOT KNOWN ahead.      |
+| DO-WHILE loop   | Similar to WHILE, but EXCECUTES ATLEAST ONCE                |
+
+```
 
 
-
-
-## Loop Structure (Generic)
-
+## Loop Structure 
+```
 All loops involve these key components:
 
 
 
-1️⃣  Initialization   → Setting up the starting point  
+1️  Initialization   → Setting up the starting point  
 
-2️⃣  Condition        → When to stop the loop  
+2️. Condition        → When to stop the loop  
 
-3️⃣  Update/Increment → Progressing toward the stop condition  
+3️.  Update/Increment → Progressing toward the stop condition  
 
-4️⃣  Body             → The code we want to repeat
+4️.  Body             → The code we want to repeat
+
+```
 
 
 

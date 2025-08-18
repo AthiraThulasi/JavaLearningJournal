@@ -1,20 +1,21 @@
 # Method Excecution in java
 
+```
 Let's understand the method excecution with the help of a program - Calculator App!
-
+```
 
 ##  What Do We Need for a Calculator App?
-
-1. **Declare variables** with the appropriate type (like `int` or `double`) to store the numbers we want to calculate.
+```
+1. Declare variables with the appropriate type (like `int` or `double`) to store the numbers we want to calculate.
 
 2. Define a variable to store the result.
 
-3. We'll define these variables **inside the `main()` method**, so they become **local variables** — stored in **stack memory**.
+3. We'll define these variables **inside the `main()` method, so they become local variables — stored in **stack memory.
 
 4. Next, we need to create methods like `add()` and `subtract()` to perform our calculations.
 
-5. We’ll **pass the LOCAL VARIABLES** (holding the numbers) as **arguments** to these methods so they can use them.
-
+5. We’ll pass the LOCAL VARIABLES (holding the numbers) as arguments to these methods so they can use them.
+```
 
 
 ##   CalculatorApp
@@ -68,19 +69,16 @@ Let's understand the method excecution with the help of a program - Calculator A
 
 ```
 
+## How Method works Internally ?
+```
+Main Method Execution Starts at (Line 2)
 
-## How Method works Internally
----
+At line 2, the main() method is pushed to the stack.
 
+num1 = 100 and num2 = 10 are local variables stored in stack memory
 
-**Main Method Execution Starts at (Line 2)**
-
-**At line 2, the main() method is pushed to the stack.**
-
-**num1 = 100 and num2 = 10 are local variables stored in stack memory**
-
-**result is declared but not initialized, so it holds a garbage value**
-
+result is declared but not initialized, so it holds a garbage value
+```
 ```
 +--------------------------+
 | main()                  |  ← top       top in stack means - This is the method currently executing
@@ -91,15 +89,15 @@ Let's understand the method excecution with the help of a program - Calculator A
 
 ```
 
-## Why can the main() method directly call getCalculatedSum() or getCalculatedDiff() by name?
+## Why is the main() method able to directly call getCalculatedSum() or getCalculatedDiff()?
+```
+The main() method is always declared as public static.
 
-**The main() method is always declared as public static**.
+In Java, a static method can directly call another static method in the same class without using an object reference.
 
-**In Java, a static method can directly call another static method in the same class without using an object reference.**
-
-
+```
 ## Calling getCalculatedSum(num1, num2) - Line 6
-
+```
 At line 6, java calls the method getCalculatedSum(num1, num2) - Method call
 
 Java search for the method inside the method first and then inside the class
@@ -111,7 +109,7 @@ Values of num1 and num2 from the main are passed into this method.
 Result is calculated and returned to the caller method - Line 7
 
 Once the method completes, it is popped off (removed) from the stack and control goes to Line 8.
-
+```
 ```
 +----------------------------------+
 | getCalculatedSum()              |  ← top        top in stack means - This is the method currently executing
@@ -127,7 +125,7 @@ Once the method completes, it is popped off (removed) from the stack and control
 ```
 
 ## Calling getCalculatedDiff(num1, num2) - Line 8
-
+```
 At line 15, java calls the method getCalculatedDiff() - Method call
 
 Java search for the method inside the method first and then inside the class
@@ -139,7 +137,7 @@ Values of num1 and num2 from the main are passed into this method.
 Result is calculated and returned to the caller method - Line 9
 
 Once the method completes, it is popped off (removed) from the stack and control goes to Line 8.
-
+```
 
 
 ```
@@ -160,7 +158,6 @@ Once the method completes, it is popped off (removed) from the stack and control
 
 ## Final Stack (Just Before Program Ends)
 
-
 ```
 +------------------------------+
 | main()                      |  ← top
@@ -171,15 +168,15 @@ Once the method completes, it is popped off (removed) from the stack and control
 | diff = 90                   |
 +------------------------------+
 ```
+```
+All lines in main() executed
 
-**All lines in main() executed**
-
-**No more methods to call**
-
+No more methods to call
+```
 
  ### At this point:
 
- ```java
+```
 - All local variables (`num1`, `num2`, `sum`, `diff`, `result`) are cleared from memory.
 - The `main()` method is popped off the stack.
 - Stack becomes empty.

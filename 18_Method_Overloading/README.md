@@ -1,19 +1,20 @@
 # Method Overloading
 
-**Method Overloading means creating multiple methods within the same class with the same name, but with different parameters.**
-
+```
+Method Overloading means creating multiple methods within the same class with the same name, but with different parameters.
+```
 ## How Java Decides Which Method to Call in method overloading?
+```
+Java looks at:
 
-**Java looks at:**
+(1) The number of parameters
 
-**(1) The number of parameters**
+(2) The data types of parameters
 
-**(2) The data types of parameters**
-
-**(3) The order of data types in parameters**
+(3) The order of data types in parameters**
 
 This decision happens at compile time
-
+```
 ## Calculator - Using Method Overloading
 
 ```java
@@ -120,22 +121,22 @@ main() continues
 
 ```
 ## Key Points:
+```
+Method overloading happens inside the same class.
 
-**Method overloading happens inside the same class.**
+The return type does not affect method overloading.
 
-**The return type does not affect method overloading.**
+Java does not care about private, static, void, or modifiers when overloading.
 
-**Java does not care about private, static, void, or modifiers when overloading.**
-
-**Only the method signature (name + parameter list) matters.**
-
+Only the method signature (name + parameter list) matters.
+```
 
 ## Why Return Type Doesn’t Matter in Overloading?
+```
+In Java, we do not use return type to differentiate overloaded methods.
 
-**In Java, we do not use return type to differentiate overloaded methods.**
-
-**If overloading were allowed based on return type alone, it would lead to ambiguity — the compiler would have no way to decide which method to execute during a method call.**
-
+If overloading were allowed based on return type alone, it would lead to ambiguity — the compiler would have no way to decide which method to execute during a method call.
+```
 ```java
 
 
@@ -148,12 +149,12 @@ double show() {
 
 }
 ```
+```
+Even though both methods return different types (int and double), they have the same method name and have no parameters.
 
-**Even though both methods return different types (int and double), they have the same method name and have no parameters**
+When we call show() >> The compiler cannot tell which version of show() we're referring to.
 
-**When we call show() >> The compiler cannot tell which version of show() we're referring to.**
+Java will throw an error because it only uses the method name and parameter list to resolve calls — not the return type.
 
-**Java will throw an error because it only uses the method name and parameter list to resolve calls — not the return type.**
-
-
+```
 

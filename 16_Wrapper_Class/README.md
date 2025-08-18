@@ -1,8 +1,8 @@
 # Wrapper Class in Java
 
 ## What is a Wrapper Class? Why Do We Need It?
-
-Think of this: You're on an **international trip to Amsterdam** .
+```
+Think of this: You're on an international trip to Amsterdam .
 
 You carry local currency, but to shop or dine abroad, you need Euros (€) — the local currency there.
 So, you convert your local currency to Euros to be able to function smoothly during your trip.
@@ -11,28 +11,27 @@ In Java, it's similar - Java is an object-oriented language, and while primitive
 
 Since **Java Collections (like ArrayList, HashMap) and many utility classes and APIs** are designed to work with **objects**, primitives like int, char, and boolean cannot be used directly in those contexts. 
 
-That’s where **Wrapper Classes** come in — they act like a currency converter , **wrapping the primitive** into an object form so it can be used where only objects are allowed.
-
-
----
+That’s where **Wrapper Classes** come in — they act like a currency converter , WRAPPING THE PRIMITIVE into an OBJECT form so it can be used where only objects are allowed.
+```
 
 ###  Analogy Summary:
-
+```
 | Concept        | Example   | Analogy                                  |
 | -------------- | --------- | ---------------------------------------- |
 | Primitive Type | `int`     | Local currency (limited use)             |
 | Wrapper Class  | `Integer` | International currency (widely accepted) |
 
----
+```
 
 ###  How Can We Define a Wrapper Class?
+```
+A Wrapper Class is an object representation of a primitive type.
 
-**A Wrapper Class is an object representation of a primitive type**.
-
----
+```
 
 ##  Primitive vs Wrapper Types
 
+```
 | Primitive Type | Wrapper Class |
 | -------------- | ------------- |
 | `byte`         | `Byte`        |
@@ -44,7 +43,7 @@ That’s where **Wrapper Classes** come in — they act like a currency converte
 | `char`         | `Character`   |
 | `boolean`      | `Boolean`     |
 
----
+```
 
 ##  Wrapper Class Features
 
@@ -52,19 +51,19 @@ That’s where **Wrapper Classes** come in — they act like a currency converte
 int num = 10;           // Primitive
 Integer numObj = 10;    // Wrapper class
 ```
+```
+* Part of java.lang package
 
-* Part of **java.lang** package
+* Immutable, like Strings
 
-* **Immutable**, like Strings
+* Allow primitive types to be used as Objects.
 
-* Allow primitive types to be used as **Objects**
+* Wrapper → stored in heap
 
-* Wrapper → stored in **heap**
-
----
+```
 
 ##  Primitive vs Wrapper Comparison
-
+```
 | Feature               | Primitive Type | Wrapper Class        |
 | --------------------- | -------------- | -------------------- |
 | Stored in             | Stack Memory   | Heap Memory (Object) |
@@ -72,8 +71,7 @@ Integer numObj = 10;    // Wrapper class
 | Supports methods?     | ❌ No           | ✅ Yes                |
 | Works with instanceof | ❌ No           | ✅ Yes                |
 | Used in Collections   | ❌ No           | ✅ Yes                |
-
----
+```
 
 ##  Visual Comparison
 ```
@@ -84,11 +82,11 @@ Integer numObj = 10;    // Wrapper class
 | Stored in stack                  | Stored in heap                            |
 | No methods available             | Many methods (parseInt, toString, etc.)   |
 ```
----
+
 
 ##  Null Handling
 
-### `Integer x = null` ✅ vs `int y = null` ❌
+### `Integer x = null`  vs `int y = null` 
 
 | Wrapper Class                      | Primitive Data Type                 |
 | ---------------------------------- | ----------------------------------- |
@@ -97,15 +95,15 @@ Integer numObj = 10;    // Wrapper class
 | Null means no object is referenced | Null is not allowed in primitives   |
 | Works fine in Java                 | Compile-time error                  |
 
-> **✅ `Integer` is an object and can store `null`.**
+>  `Integer` is an object and can store `null`.
 
-> **❌ `int` must have a real number like `0`, `1`, etc.**
+>  `int` must have a real number like `0`, `1`, etc.
 
 ---
 
 ##  Why Do We Need Wrapper Classes?
-
-1. Collections like `ArrayList<int>` ❌ won’t work with primitives → use `ArrayList<Integer>` ✅
+```
+1. Collections like `ArrayList<int>`  won’t work with primitives → use `ArrayList<Integer>` 
 
 2. Allow `null` values
 
@@ -117,7 +115,7 @@ Integer numObj = 10;    // Wrapper class
 
 Don’t worry if Collections are new to you — you'll understand this even better in the **Collections** section of the journal.
 
----
+```
 
 ##  Use of Wrapper in Collections
 
@@ -148,9 +146,9 @@ Deque<Short> shortDeque = new LinkedList<>();
 
 These are examples of using wrapper classes with various generic data structures in Java.
 
----
 
-##  Interview Questions
+
+##  Concept cHECK
 
 
 * What is a Wrapper Class in Java?

@@ -1,15 +1,15 @@
 # String
-
-### A String is a sequence of characters.  Eg: "java". ( String should be enclosed in double quotes)
+```
+A String is a sequence of characters.  Eg: "java". ( String should be enclosed in double quotes)
  
-### String is a class from the java.lang package. It is a non-primitive data type .
-
+String is a class from the java.lang package. It is a non-primitive data type .
+```
 ## How to declare a String?
-
-### 2 ways to declare a String - (1) Using String Literal and (2) Using new Keyword (String Object)
+```
+ 2 ways to declare a String - (1) Using String Literal and (2) Using new Keyword (String Object)
+```
 
 ## (1) Using String Literal
-
 
 ``` java
 S in caps  non -primitive variable 
@@ -60,11 +60,12 @@ Each call to new creates a separate object in heap memory - meaning s1 and s2 po
 ```
 
 ## Where is this String Literal stored in Memory?
+```
+String literal is stored in a special memory called STRING INTERN POOL.
 
-**String literal is stored in a special memory called STRING INTERN POOL.**
+STRING INTERN POOL lets us store only unique value (No duplicates) - Efficient memory usage.
 
-**STRING INTERN POOL lets us store only unique value (No duplicates) - Efficient memory usage.**
-
+```
 ## How Java Stores String Literals in the Intern Pool ?
 
 ```java
@@ -112,11 +113,11 @@ To save memory by reusing immutable string literals.
 ```
 
 ## String is an Immutable Class - What Does That Mean? How String Immutability Works?
+```
+String is an immutable class, which means that once a String object is created, its value cannot be changed.
 
-**String is an immutable class, which means that once a String object is created, its value cannot be changed.** 
-
-**Any modification of a String results in the creation of a new String object, leaving the original one unchanged.**
-
+Any modification of a String results in the creation of a new String object, leaving the original one unchanged.
+```
 ```java
 
 1.   public static void main(String[] args()){
@@ -167,18 +168,18 @@ Java checks if "Alexa Alexa" already exists in the String Intern Pool. Since it 
 ```
 
 ## How Does Java Compare Objects?
+```
+Java compares objects in two ways:
 
-### Java compares objects in two ways:
+ (1) Using the reference comparison operator  ==
 
-### (1) Using the reference comparison operator  ==
+ (2) Using the .equals() method
 
-### (2) Using the .equals() method
-
-
+```
 ## How Reference Comparison Operator ( == )  Compare Primitives ?
-
->**For primitive types (like int, char, boolean, etc.), == compares the actual values stored in the variables, not memory addresses.**
-
+```
+>For primitive types (like int, char, boolean, etc.), == compares the actual values stored in the variables, not memory addresses.
+```
 ```java 
 
 
@@ -195,9 +196,9 @@ Reference Comparison Operator ( == )compares actual values stored in the variabl
 ```
 
 ## How Reference Comparison Operator ( == ) Compares Non - Primitives ?
-
->**For non-primitive types, == compares the memory address (i.e., whether two reference variables point to the same object in memory)**
-
+```
+For non-primitive types, == compares the memory address (i.e., whether two reference variables point to the same object in memory)
+```
 ``` java
 
 String s1 = new String("Java"); //  s1 -  reference variable
@@ -219,11 +220,11 @@ System.out.println(s3 == s4); // true → both refer to the same object in the S
 
 ```
 ## .equals() method
+```
+Used to compare contents of objects**
 
->**Used to compare contents of objects**
-
->**The .equals() method is case-sensitive.** 
-
+The .equals() method is case-sensitive.** 
+```
 ```java
 
 String s1 = new String("Java");
