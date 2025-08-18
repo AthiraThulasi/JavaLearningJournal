@@ -1,5 +1,28 @@
 # ArrayList
 
+```
+Imagine we are building a Contact App with 100s of contacts.
+ 
+Can we use an Array?
+
+No — because:
+
+      Arrays have a fixed size, which must be declared at the time of creation.
+
+      In a contact app, we’ll frequently add or remove contacts, and we don’t know the total number in advance.
+
+      So, arrays are not suitable for such dynamic operations.
+ 
+
+ Why use ArrayList?
+
+•	ArrayList is part of the Java Collection Framework.
+
+•	It is a resizable array (dynamic), meaning it can grow or shrink in size.
+
+•	It stores elements in a contiguous memory structure, allowing fast access.
+```
+
 ## Features of ArrayList !
 ```
 
