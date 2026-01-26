@@ -1,7 +1,8 @@
 # Inheritance
 
 ```
-Inheritance teaches  - ' IS A ' relationship
+Inheritance teaches  - ' IS A ' relationship.
+
 Inheritance is the relationship between similar entities.
 
 Inheritance is a parent–child relationship, where the child class (subclass) can acquire the properties and behaviors (variables and methods) of the parent class (superclass) WITHOUT CREATING THE OBJECT**.
