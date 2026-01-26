@@ -48,8 +48,8 @@ class Student {
 2. public class Student {    // Student is the class name
 3.     
 4.      int age;         // variables created inside the class → instance variables - stored in Heap memory
-5.      int rollNumber;  // instance variables are properties of class
-6.      String name;                     
+5.      int rollNumber;  // instance variables are properties of class // cannot be static
+6.      String name;     // instance variables are assigned with default values, if not initialized              
 7.                              
 8.     public Student(String name, int age, int rollNumber) {
 10.        this.name = name;
