@@ -62,13 +62,13 @@ We don't have to worry about size — it can grow as needed.
 
 ```java
 
-ArrayList<Integer> al = new ArrayList<Integer>();
+List<Integer> al = new ArrayList<Integer>();
 
 ```
 
 ```
 
->	ArrayList <Integer> : This defines a list that will store Integer objects — not primitive int, but its object form, which is called a wrapper class.
+>	List <Integer> : This defines a list that will store Integer objects — not primitive int, but its object form, which is called a wrapper class.
 
 >	al: This is the reference variable
 
@@ -88,7 +88,7 @@ ArrayList<Integer> al = new ArrayList<Integer>();
 
 ```java
 
-ArrayList<Integer> al = new ArrayList<Integer>();
+List<Integer> al = new ArrayList<Integer>();
 
 ```
 
