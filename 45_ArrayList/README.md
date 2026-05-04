@@ -176,7 +176,7 @@ By using collections utility method synchronizedList and pass the arraylist
 
 ```java
 
-List<String> syncList = Collections.synchronizedList(new ArrayList<>();
+List<String> syncList = Collections.synchronizedList(new ArrayList<>());
 
 // This ensures thread-safe access.
 
@@ -187,7 +187,7 @@ List<String> syncList = Collections.synchronizedList(new ArrayList<>();
 
 ```java
 
-CopyOnWriteArrayList<String> safeList = new CopyOnWriteArrayList<>();
+CopyOnWriteArrayList<String> safeList = new CopyOnWriteArrayList<>());
 
 ```
 This is a thread-safe variant of ArrayList. It creates a fresh copy of the array list on every write (add/remove/update), ensuring safe iteration during concurrent modifications.
