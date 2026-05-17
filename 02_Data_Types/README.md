@@ -56,17 +56,25 @@ Java has two categoriesS of data types:
 **PRIMITIVES store ACTUAL VALUE directly in memory.**
 
 ```
-| Data Type | Default Value | Size in Bytes | Range                          |
-| --------- | ------------- | ------------- | ------------------------------ |
-| `byte`    | 0             | 1 byte        | -128 to 127                    |
-| `short`   | 0             | 2 bytes       | -32,768 to 32,767              |
-| `int`     | 0             | 4 bytes       | -2³¹ to 2³¹-1                  |
-| `long`    | 0L            | 8 bytes       | -2⁶³ to 2⁶³-1                  |
-| `float`   | 0.0f          | 4 bytes       | ±3.4e38 (6–7 digits precision) |
-| `double`  | 0.0d          | 8 bytes       | ±1.8e308 (15 digits precision) |
-| `char`    | '\u0000'      | 2 bytes       | Unicode characters             |
-| `boolean` | false         | \~1 byte\*    | true or false                  |
+| Data Type | Default Value *(instance/static variables only)* | Size          | Range              |
+| --------- | ------------------------------------------------ | ------------- | ------------------ |
+| `byte`    | 0                                                | 1 byte        | -128 to 127        |
+| `short`   | 0                                                | 2 bytes       | -32,768 to 32,767  |
+| `int`     | 0                                                | 4 bytes       | -2³¹ to 2³¹-1      |
+| `long`    | 0L                                               | 8 bytes       | -2⁶³ to 2⁶³-1      |
+| `float`   | 0.0f                                             | 4 bytes       | ±3.4e38            |
+| `double`  | 0.0d                                             | 8 bytes       | ±1.8e308           |
+| `char`    | `'\u0000'`                                       | 2 bytes       | Unicode characters |
+| `boolean` | false                                            | JVM dependent | true or false      |
 
+
+```
+
+### TAKEAWAY 
+
+```
+Primitive local variables do NOT get default values.
+Default values are automatically assigned only to instance and static variables.
 ```
 
 ##  Non-Primitive Data Types
