@@ -56,7 +56,7 @@ Java has two categoriesS of data types:
 **PRIMITIVES store ACTUAL VALUE directly in memory.**
 
 ```
-| Data Type | Default Value *(instance/static variables only)* | Size          | Range              |
+| Data Type | Default Value (instance/static variables only) | Size          | Range              |
 | --------- | ------------------------------------------------ | ------------- | ------------------ |
 | `byte`    | 0                                                | 1 byte        | -128 to 127        |
 | `short`   | 0                                                | 2 bytes       | -32,768 to 32,767  |
