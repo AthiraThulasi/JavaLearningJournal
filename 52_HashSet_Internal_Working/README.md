@@ -80,9 +80,9 @@ We can access a VALUE in a Map by using its KEY — this process is called a loo
 
 ``` java
 
-HashSet<Integer> set = new HashSet<>();
+Set<Integer> set = new HashSet<>();
 
-add.set(1).   // Adding 1 to Hashset
+set.add (1).   // Adding 1 to Hashset
 
 ```
 
