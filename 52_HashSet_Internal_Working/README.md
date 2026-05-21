@@ -6,7 +6,7 @@
 
 ### (2) why hashset does not maintain order?**
 
-To understand how Set maintains uniqueness, it's helpful to learn how Map works internally. Read about Map here.
+To understand how Set maintains uniqueness, it's helpful to learn how Map works internally. So, Good to have a read about Map first.
 
 ## How set maintains uniqueness ?
 
