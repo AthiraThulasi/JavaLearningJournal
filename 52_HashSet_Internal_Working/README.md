@@ -223,7 +223,7 @@ putVal( )  performs the actual insertion into the appropriate bucket.
   (2) It stores elements based on their hashcode, not the order in which they were added.
 
   (3) Internally, it uses a HashMap, which organizes elements into buckets based on hashing rather than positions.
-```
+
 
 > So when we iterate over a HashSet, the order may appear random or shuffled, and it can vary depending on the hash distribution.
 
