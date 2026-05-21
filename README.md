@@ -22,11 +22,11 @@ That’s how this Java Learning Journal was born — not just for others, but al
 I owe a big part of this journal to my mentor, whose brilliant content, passionate teaching & dedication to clarity have deeply inspired me 🫶.
 
 Every concept I’ve noted here — from the basics to the tricky parts - comes alive because of the way he explains it with such purpose and precision.
-His energy constantly reminds me to keep learning, keep building, and keep shining - and I hope this journal reflects that same spirit. ✨
+His energy constantly reminds me to keep learning, keep building, and keep shining and I hope this journal reflects that same spirit. ✨
 
 Thank you  [Jatin Shharma](https://www.youtube.com/@tech_with_jatin)! ✨
 
-I’ve also explored the topics on my own - did my own digging, tried out examples, wrote code snippets, and created visual diagrams - all to understand the why behind every concept better.
+I’ve also explored the topics on my own, did my own digging, tried out examples, wrote code snippets, and created visual diagrams, all to understand the why behind every concept better.
 Along the way, I’ve connected the dots to real-time doubts, interview questions, and added Git-friendly formatting to make the learning smoother.
 
 📂 Table of Contents 
