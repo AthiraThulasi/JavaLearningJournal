@@ -22,13 +22,14 @@ To understand how Set maintains uniqueness, it's helpful to learn how Map works 
 ```
  Because HashMap already has the logic to: 
 
-> avoid duplicates 
+> avoid duplicates
 
-> store items in a hash table 
+> store items using hashing and buckets
 
-> retrieve quickly using hashing 
+> retrieve items quickly
 
-> So instead of writing all that logic again, HashSet just reuses HashMap.
+> So instead of writing all that logic again, HashSet reuses HashMap internally.
+```
 
 ```
 ##  What happens when we create a Hashset ?
