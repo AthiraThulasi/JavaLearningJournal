@@ -217,13 +217,16 @@ putVal( )  performs the actual insertion into the appropriate bucket.
 
 > That’s because:
 
-      (1)  A HashSet does not maintain indexes like a list or array.
+```
+  (1) A HashSet does not support index-based storage like a List or Array.
 
-      (2) It stores elements based on their hashcode, not the order in which they were added.
+  (2) It stores elements based on their hashcode, not the order in which they were added.
 
-      (3) Internally, it uses a HashMap, which organizes elements into buckets (based on hash) rather than positions.
+  (3) Internally, it uses a HashMap, which organizes elements into buckets based on hashing rather than positions.
+```
 
-> So when we iterate over a HashSet, the order may appear random or shuffled — and it can change depending on the hash distribution.
+> So when we iterate over a HashSet, the order may appear random or shuffled, and it can vary depending on the hash distribution.
+
              
 ```
 
