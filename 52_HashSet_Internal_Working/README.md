@@ -37,9 +37,9 @@ To understand how Set maintains uniqueness, it's helpful to learn how Map works 
 
 ```java
 
-HashSet<Integer> set = new HashSet<>(); // Creating a Hashset
+Set<Integer> set = new HashSet<>(); // Creating a Hashset
 
-HashMap<Integer, Object> map = new HashMap<>(); // java internally creates a HashMap
+Map<Integer, Object> map = new HashMap<>(); // java internally creates a HashMap
 
 ```
 ## HashSet() Constructor
